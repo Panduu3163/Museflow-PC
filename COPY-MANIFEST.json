@@ -1,0 +1,2099 @@
+{
+  "format_version": 1,
+  "prepared_date": "2026-11-14",
+  "purpose": "Preparation/reference only; no application implementation",
+  "source_root": "E:\\ALL Project & Idea Workspace\\WSL BACKUP\\museflow-upgrade",
+  "destination_root": "E:\\ALL Project & Idea Workspace\\WSL BACKUP\\Museflow PC version",
+  "source_git_head": "31725093a86266dd1f117d9c524b39e4a91e6984",
+  "source_git_branch": "update/1.8-published",
+  "source_worktree_dirty": true,
+  "android_source_label": "1.8.1-beta (66); user-reported glass bugs; development paused",
+  "copied_file_count": 252,
+  "copied_bytes": 14295768,
+  "copied_files": [
+    {
+      "source_relative_path": "LICENSE",
+      "destination_relative_path": "LICENSE",
+      "category": "project-license",
+      "bytes": 35150,
+      "source_mtime_utc": "2026-07-19T14:08:59+00:00",
+      "sha256": "fce02ebb691c768cde194afbe91b8025fd7b1f49031f33996deb246a5926f0e2"
+    },
+    {
+      "source_relative_path": "README.md",
+      "destination_relative_path": "reference/android/README.md",
+      "category": "upstream-context",
+      "bytes": 8362,
+      "source_mtime_utc": "2026-11-13T15:12:26.340796+00:00",
+      "sha256": "5e9c0a61fa60829ef5546690df5a547ed2c7df6316be56769aa74423aff90b17"
+    },
+    {
+      "source_relative_path": "CHANGELOG.md",
+      "destination_relative_path": "reference/android/CHANGELOG.md",
+      "category": "upstream-context",
+      "bytes": 45983,
+      "source_mtime_utc": "2026-11-13T15:12:26.340796+00:00",
+      "sha256": "d832db7d6d41a3925cdb32bd12a03193c0b80f39eced04f7782cfe72add6a851"
+    },
+    {
+      "source_relative_path": "THIRD_PARTY_NOTICES.md",
+      "destination_relative_path": "reference/android/THIRD_PARTY_NOTICES.md",
+      "category": "upstream-context",
+      "bytes": 1172,
+      "source_mtime_utc": "2026-11-12T23:07:47.656980+00:00",
+      "sha256": "c4977c9d2f139c160bb7abba27498dadb3602290de45cfe2dde16ded0562cc23"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/InnerTube.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/InnerTube.kt",
+      "category": "catalog-client",
+      "bytes": 26906,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "8e945c66919dec910b4589653604f4c1ade4aece8f38755f39d255662278ed52"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/AccountInfo.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/AccountInfo.kt",
+      "category": "catalog-client",
+      "bytes": 171,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "073f0ee2104c8abd9266bfca988e4efe66ee34136bb0f220fd16cb933e39df22"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/AutomixPreviewVideoRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/AutomixPreviewVideoRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 430,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "9e1f20dc67fad56eccef4039e534169fbbb1e7d939cb7a269982a7012abf7ba5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Badges.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Badges.kt",
+      "category": "catalog-client",
+      "bytes": 268,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "3bfe1526b6d3d46d4d0f06ff2dddd13ea71d809b5fcfbf5eba329e073ad579ab"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/AccountMenuBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/AccountMenuBody.kt",
+      "category": "catalog-client",
+      "bytes": 317,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "813b200f7c9fe91cffc2a0d56aadfafd7c346ef0b216bc6eacabd4c2e670cb45"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/BrowseBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/BrowseBody.kt",
+      "category": "catalog-client",
+      "bytes": 273,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "9b469acfe4aa3e7e68e9763647dca762a9218de562b2b01858227672b817ba59"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/CreatePlaylistBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/CreatePlaylistBody.kt",
+      "category": "catalog-client",
+      "bytes": 467,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "4ac7394e4067c247aeff20ebb8aafda64def993c7d8e7d33067f77714551b117"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/EditPlaylistBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/EditPlaylistBody.kt",
+      "category": "catalog-client",
+      "bytes": 2248,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "12a2a4622dc05e46f55e782668b48b80e8e1dad97a7ea63d3eaea9a79ec68ad8"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/FeedbackBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/FeedbackBody.kt",
+      "category": "catalog-client",
+      "bytes": 322,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d09b48f70c11c68e9ce959ee2d23f242ff11dec46d4cc12ab14e49c33022802a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/GetQueueBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/GetQueueBody.kt",
+      "category": "catalog-client",
+      "bytes": 255,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "703550883fbb50dacee796127fb2b81d12156d5c87b767cf365226affa7e52b3"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/GetSearchSuggestionsBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/GetSearchSuggestionsBody.kt",
+      "category": "catalog-client",
+      "bytes": 228,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "1e16fd35ecadde7abe0bf046dc234e8ee7ae8a0dd9ffc5b8a9a5742fe6c2c2b2"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/GetTranscriptBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/GetTranscriptBody.kt",
+      "category": "catalog-client",
+      "bytes": 222,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "5c3d3753eca49d4667e0e37afb2cdd9d8248639b57cb9487255bb699601da19e"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/LikeBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/LikeBody.kt",
+      "category": "catalog-client",
+      "bytes": 443,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "9a70f43e2062c7a69e410a4c1d21f94a42a370323fc183f796e3713ad6b9b669"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/NextBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/NextBody.kt",
+      "category": "catalog-client",
+      "bytes": 358,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d4e71dad43b9e89a3f80c2d0606792bd53245b20e13f958dec113646eacac224"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/PlayerBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/PlayerBody.kt",
+      "category": "catalog-client",
+      "bytes": 782,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "c85efb6185536aa3dc0339b5cbddef2e64d6ff7e4e3aaa951787f8e444acb1c5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/SearchBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/SearchBody.kt",
+      "category": "catalog-client",
+      "bytes": 240,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "040a3e85edce87dc22464f248e1057aadeacd7a48d1da411153f155e1c22d95b"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/body/SubscribeBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/body/SubscribeBody.kt",
+      "category": "catalog-client",
+      "bytes": 228,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "47266158cb8f36e46ae96847e4e8a58bcb89f2838d6c3fd2d7cd71897591a240"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Button.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Button.kt",
+      "category": "catalog-client",
+      "bytes": 357,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "17261137cd9c782fd41ad1a7aac2fd4fdc8dc8bce50190d2a40bc020ef1e9969"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/comment/CommentRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/comment/CommentRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 2243,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "92a212e344b14b9dce195d776e17fa366c86942d9c56355d39fcd1a83775853c"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/comment/CommentResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/comment/CommentResponse.kt",
+      "category": "catalog-client",
+      "bytes": 3960,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0514135d37a8c6768eac4d2d44bfd2fdd279f402fc3f44e9094e34d603020201"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Context.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Context.kt",
+      "category": "catalog-client",
+      "bytes": 1019,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "a9b458324632a4d0f4105793d7dd10cc879e52d09da826c5d4e9a2fdb3f8d1ce"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Continuation.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Continuation.kt",
+      "category": "catalog-client",
+      "bytes": 583,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d4517baaecaadd1e0868870a6f352dc612f183d4c89bff3503e146e50c2afd45"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/ContinuationItemRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/ContinuationItemRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 416,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "fa788764475ac6af31739d567be610ef6447622b490199ff58a1f69660b6486a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Endpoint.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Endpoint.kt",
+      "category": "catalog-client",
+      "bytes": 4393,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "4af789a209908d38cd00eef348f7bc3e832340dd1d01406335aded328539ceed"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/GridRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/GridRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 611,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "f876afe0e10c107b70fd60c70e41524adac9c6261f54fdff28a2e213bc824503"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Icon.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Icon.kt",
+      "category": "catalog-client",
+      "bytes": 138,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "daedff4b295649de335c190d3f57410259f5304d3055096a7bee98de1f4eac4a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/IpVersion.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/IpVersion.kt",
+      "category": "catalog-client",
+      "bytes": 90,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "03cd12f5a848e56687126b780dba75789afd1b8c4287c6e2b8cd38eb6e345f0a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MediaInfo.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MediaInfo.kt",
+      "category": "catalog-client",
+      "bytes": 421,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e6c30b5c0ccdc9e1fb1a266f4421b2414644334f21fe68bb8481edc012675687"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Menu.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Menu.kt",
+      "category": "catalog-client",
+      "bytes": 1571,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "1cfd299994a9679e28717a086f9b72ea4216eff607da2801613f98c8b9ff38c1"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicCardShelfRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicCardShelfRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 761,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e557d249b5b52d7942857b9728f599628f03bc77d37c9152b0253611f17eda80"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicCarouselShelfRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicCarouselShelfRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 946,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "f4ca875deaa824a4334b693f5cc99e45fffab3baf730aa68b65d2d039eac1ae9"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicDescriptionShelfRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicDescriptionShelfRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 236,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "59c73470e25eff69d365e55eec954804598ec11634a88980695d3a7c39a99508"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicEditablePlaylistDetailHeaderRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicEditablePlaylistDetailHeaderRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 828,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6db1c47a4ba084b1bd9bce32f86096276ac8b8c2546ae21e39d2f9d9989a9e2c"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicMultiRowImageItemRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicMultiRowImageItemRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 256,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "5c32af18cad7435b746d2e58175bcaab214b2bcc00597acf716a3bf92beaeaac"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicNavigationButtonRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicNavigationButtonRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 419,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "16188ff297f270379ee966e71adf26f6376a1135a391ec95ab2729b135237cc4"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicPlaylistShelfRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicPlaylistShelfRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 321,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "24f10047a0d1b2eecb1ce4136ca269393adb95456219a2b77ed7f46a3d1dbfe6"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicQueueRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicQueueRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 549,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0ccdfed63179b3832250d80b05a4517a0972fbdd9717f63add0a9d1f4947b264"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicResponsiveHeaderRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicResponsiveHeaderRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 655,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "9dfca1f627d41e05fd4223db5dab7ddb98ea8877591db35748ef7ee4d78c38ad"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicResponsiveListItemRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicResponsiveListItemRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 3965,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "7cf3fc79df2f3ad02d937b8ad856a0335fb15e12c9e71bd33a09ec9c603a79d0"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicShelfRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicShelfRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 881,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0b026bebbdc4d597a7e9b47cfc2a7b8fb67dfa60422f157a63e9b72599a4b311"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/MusicTwoRowItemRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/MusicTwoRowItemRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 2638,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0a3ce5075980507fcdc94ddb762ad31eb38ff0ae028531015f1121d543357e99"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/NavigationEndpoint.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/NavigationEndpoint.kt",
+      "category": "catalog-client",
+      "bytes": 1230,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "860c152ad024c34ec115b04759d08b9869543450c0287210d2c810d1cb136832"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/PlaylistDeleteBody.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/PlaylistDeleteBody.kt",
+      "category": "catalog-client",
+      "bytes": 226,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "1496793f40d7869256b1143e4e785e6cbd767754f63fe3067d28b1b6ebc4c714"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/PlaylistPanelRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/PlaylistPanelRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 569,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "40cd110a2c59b5de2113cd782975eb33c89dd6d4ca61572487d4ea70ae189558"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/PlaylistPanelVideoRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/PlaylistPanelVideoRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 498,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "4155287cb007111bc66c7c41327f0ee9407bd58b1117d811116d83eeda145800"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/AccountMenuResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/AccountMenuResponse.kt",
+      "category": "catalog-client",
+      "bytes": 1852,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "c9851da8a9aa1336d70a6d0d6a0e89e0c0f83a86e4fe6bf35b0bf711df763ceb"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/AddItemYouTubePlaylistResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/AddItemYouTubePlaylistResponse.kt",
+      "category": "catalog-client",
+      "bytes": 529,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "2bc41b0dffcfda4d8eb95fbaeebe9c858521bbc69df13def2e6d3e7e3d4971c4"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/BrowseResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/BrowseResponse.kt",
+      "category": "catalog-client",
+      "bytes": 5204,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "3d89118182ee27e69c3aa17c99407a9ffc99bc16abb860ac61c80e4aa4f9a4dc"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/ContinuationResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/ContinuationResponse.kt",
+      "category": "catalog-client",
+      "bytes": 515,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0a9d0c556380e5fe8b7d3c08e3cd78714ec4366e663846ca83e392fa298b56df"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/CreatePlaylistResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/CreatePlaylistResponse.kt",
+      "category": "catalog-client",
+      "bytes": 166,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "38cfe87ca96ac8e7bd398f497ce070edca50148d2bdef4aaf923071ee21854f9"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/EditPlaylistResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/EditPlaylistResponse.kt",
+      "category": "catalog-client",
+      "bytes": 180,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "2b93a4304260e4931d1a6bfc29398e739de6e9f0da185ef2a6f4dd6d057f20f5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/FeedbackResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/FeedbackResponse.kt",
+      "category": "catalog-client",
+      "bytes": 259,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "ad80cc2614c3b1b11677837b6220ea5c7e6909cdb07fae49614e862ef38484cf"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/GetQueueResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/GetQueueResponse.kt",
+      "category": "catalog-client",
+      "bytes": 332,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "66ba28cc4688be80cf6e8363c293916d91880df92e52b788f4517df67f77a41f"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/GetSearchSuggestionsResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/GetSearchSuggestionsResponse.kt",
+      "category": "catalog-client",
+      "bytes": 378,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "ae28267e2c4f2d7b2e82aefd44c5f9f32386c130f342f99fc0c6dbf363694ee5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/GetTranscriptResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/GetTranscriptResponse.kt",
+      "category": "catalog-client",
+      "bytes": 2543,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "2274d42db42a5f9d466696f64da91d0b2e156aaa4d4e66ae1ed6d9b19f4b8fcb"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/ImageUploadResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/ImageUploadResponse.kt",
+      "category": "catalog-client",
+      "bytes": 167,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "412042c398ac1458727c8b34462289de8a95aff58a79449960d51986fabc9c65"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/NextResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/NextResponse.kt",
+      "category": "catalog-client",
+      "bytes": 2101,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d8e1a0f0de3f2316458ecc8c10e09aecd06636a4a21336835e2efc3374f6d224"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/PlayerResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/PlayerResponse.kt",
+      "category": "catalog-client",
+      "bytes": 3376,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d4f7ddd0f10921a16513c2ab236cfa3c5eba5e2ec8488e2356e7a3b7d8adbc51"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/response/SearchResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/response/SearchResponse.kt",
+      "category": "catalog-client",
+      "bytes": 934,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6ca304f4a8cc86d883c601868b5195e21c44195a477d14c596a8418f12b63a70"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/ResponseContext.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/ResponseContext.kt",
+      "category": "catalog-client",
+      "bytes": 466,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "3edfbc587e577b380b77cc4ab8a5c6c97d33880e8ff9ca582f4d5428bb93034a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/ReturnYouTubeDislikeResponse.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/ReturnYouTubeDislikeResponse.kt",
+      "category": "catalog-client",
+      "bytes": 358,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "8b6402e25affa055dcef79f2c71bec4d2d0a6a5b941abd233ce59b54c7853e5c"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Runs.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Runs.kt",
+      "category": "catalog-client",
+      "bytes": 1771,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "21b055554c81146d7795a02b7adf8b61a485961a54bd1c710bba46453dedf4bf"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/SearchSuggestions.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/SearchSuggestions.kt",
+      "category": "catalog-client",
+      "bytes": 139,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "35e0fdbeccf4dbd335cee7df3c183a01ef4adead741ff0fd6445777904a2684d"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/SearchSuggestionsSectionRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/SearchSuggestionsSectionRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 544,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "095e03c3bc840706ccd7336f295218edb33f3d0ebbe4e287aab2893545c4d4e5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/SectionListRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/SectionListRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 2114,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "fd122d23d3ca9364abd4ed6d301dcc9f907af3d3f25344412de75979758c5c2d"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/SubscriptionButton.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/SubscriptionButton.kt",
+      "category": "catalog-client",
+      "bytes": 419,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e098846b868f6f395b49945800f36d0ce2c4d5f66a87d18aac98e773bee2eddf"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Tabs.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Tabs.kt",
+      "category": "catalog-client",
+      "bytes": 617,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "23ee40b22e8e3fc7973eca04420a3f00dc12779463b9219da33199e093f23e74"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/ThumbnailRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/ThumbnailRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 1826,
+      "source_mtime_utc": "2026-07-26T13:42:22+00:00",
+      "sha256": "c993e270c19c6a7d1d2f704deb45a74a4abec9adefaccddeb669de660b0c6fb7"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/Thumbnails.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/Thumbnails.kt",
+      "category": "catalog-client",
+      "bytes": 258,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e86ac89f9dd6dfd63e3dc96f9d0ab1aa25ccf1867299e2ff7a07a4071e2b472b"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/TwoColumnBrowseResultsRenderer.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/TwoColumnBrowseResultsRenderer.kt",
+      "category": "catalog-client",
+      "bytes": 675,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "a5f716bb157be77dde55980e5097e8ec280517d1745c2f32c0f380d9d8da6496"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/UrlEndpoint.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/UrlEndpoint.kt",
+      "category": "catalog-client",
+      "bytes": 180,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "67de218de62f1529b754970446f41686f0ddf70f216cc1759b3ac9f9feec0afd"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/YouTubeClient.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/YouTubeClient.kt",
+      "category": "catalog-client",
+      "bytes": 9468,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6338270a2d2696e43541867d43cc726edc503263fa952c527a23552cc5c570a8"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/YouTubeDataPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/YouTubeDataPage.kt",
+      "category": "catalog-client",
+      "bytes": 8953,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "8cc0dead617318850129f8c8fb30d934bf7de73437676d0e4272c0b0bcf7a629"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/YouTubeLocale.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/YouTubeLocale.kt",
+      "category": "catalog-client",
+      "bytes": 193,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "be703b3ec4463807693164462b8443432a97a13e9935aca38c66e8ac2131d349"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/models/YTItem.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/models/YTItem.kt",
+      "category": "catalog-client",
+      "bytes": 3226,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0015d3453bbc22bd9b992c8fa46f4b252af2975313ad72cd9d8f1796448f203a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/NetworkConfig.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/NetworkConfig.kt",
+      "category": "catalog-client",
+      "bytes": 4100,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "b6579572df83ecc85b21bc6cd4df071b29d83436d653dc2eaf052dc28d2d68f0"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/AlbumPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/AlbumPage.kt",
+      "category": "catalog-client",
+      "bytes": 6553,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "2a892aee8c052fda07fc7a160f694bf0cc9c75d48347911941592d8725fd7fe5"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/ArtistItemsContinuationPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/ArtistItemsContinuationPage.kt",
+      "category": "catalog-client",
+      "bytes": 179,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "31490d3d30c3de3baa7bebf5b2d54de0469a73461dbd7d97810e55458e403155"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/ArtistItemsPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/ArtistItemsPage.kt",
+      "category": "catalog-client",
+      "bytes": 7528,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "00dc9d558a375b6b1af950ab065d82a9d783a6b3c27620767658f30ac4339e4b"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/ArtistPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/ArtistPage.kt",
+      "category": "catalog-client",
+      "bytes": 11815,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "67918bb95c6ecb41e2bb529d6a93d10791847bfd402014d3932232b1cad7bc1a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/BrowseResult.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/BrowseResult.kt",
+      "category": "catalog-client",
+      "bytes": 1934,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "b4cd3e06a2b80c5ef43f59d40c154bee212cac92946ee872cdf99fc164a0c9db"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/ChartsPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/ChartsPage.kt",
+      "category": "catalog-client",
+      "bytes": 374,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "4f93badf70e0f0af8b5a2e7dba2963d70a081482d61f629072628569ea1e971a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/ExplorePage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/ExplorePage.kt",
+      "category": "catalog-client",
+      "bytes": 198,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "d71f8da9c68d426ccf4be60063fbaa74651c349bce5a6adf2c7b5445c7a2c9fc"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/HistoryPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/HistoryPage.kt",
+      "category": "catalog-client",
+      "bytes": 4194,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e52895c582c9949b8a51832a9f36163598a7c79ff24ce4c3c059d9c879218a0a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/HomePage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/HomePage.kt",
+      "category": "catalog-client",
+      "bytes": 9573,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "f8158a3c36a4758b57568da5616817d14b980c22b2839cac405098434f75acd6"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/LibraryAlbumsPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/LibraryAlbumsPage.kt",
+      "category": "catalog-client",
+      "bytes": 1327,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "40a767f3fff00b9c3fcd463838920514ef7feb6276f41a34d5dcdcd776890fc4"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/LibraryContinuationPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/LibraryContinuationPage.kt",
+      "category": "catalog-client",
+      "bytes": 175,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "9809a00059c3a9cb0b9ee2f3b9b66beac0f6fba9765e9a4399fe7be3a5978aa8"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/LibraryPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/LibraryPage.kt",
+      "category": "catalog-client",
+      "bytes": 11378,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "b382b267ac4fd64a7969817b32059955fd9ace9d70d2beb5f781fbbabfc05c50"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/MoodAndGenres.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/MoodAndGenres.kt",
+      "category": "catalog-client",
+      "bytes": 1626,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6478a35caeef377472d2b32d258f3084b1f28a802fb9f953a97dd3517bfb281a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/NewPipe.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/NewPipe.kt",
+      "category": "catalog-client",
+      "bytes": 8862,
+      "source_mtime_utc": "2026-09-26T12:34:44.328940+00:00",
+      "sha256": "a0c8c55bf222e779ee15ca7069811085eaf0e12571fe093391f1c500f75c4c7e"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/NewReleaseAlbumPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/NewReleaseAlbumPage.kt",
+      "category": "catalog-client",
+      "bytes": 1771,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "599e882e382bd672fbe4fb37d2f9906c7fa0dc13b4157f97ad437f13b66d4df7"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/NextPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/NextPage.kt",
+      "category": "catalog-client",
+      "bytes": 2906,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "68be6b7c1ed63992338a577843117c31603cd6d605d9c28cdf2712e17763a1c2"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/PageHelper.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/PageHelper.kt",
+      "category": "catalog-client",
+      "bytes": 7275,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "0b6cadd801da5eb64168ce13d2aca7013eba907ea0583365d47165f776ff8a92"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/PlaylistContinuationPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/PlaylistContinuationPage.kt",
+      "category": "catalog-client",
+      "bytes": 180,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "c90119be00e6606e75d785ca5813211813ea2a1b6465c2ed4215ea729c08a29a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/PlaylistPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/PlaylistPage.kt",
+      "category": "catalog-client",
+      "bytes": 4130,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "afdbe887f143be68c9830d16beca6cd15e8cd5a729d4be4365ff314d9d27e47a"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/RelatedPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/RelatedPage.kt",
+      "category": "catalog-client",
+      "bytes": 9254,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "7586219813c8ae3a92bd3ef32bd5bc4c10d78f6c9ae7af53e230fe1e0179508f"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/SearchPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/SearchPage.kt",
+      "category": "catalog-client",
+      "bytes": 10233,
+      "source_mtime_utc": "2026-09-28T22:51:00.289448+00:00",
+      "sha256": "db9f1668111527dd80706b2d72b460bf6732ba55901c844c762cfb3b5649fb4c"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/SearchSuggestionPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/SearchSuggestionPage.kt",
+      "category": "catalog-client",
+      "bytes": 7321,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "24958f202c897930efe8cfc3fcfe81832ee6c4a42a1037d0131addcfe947391f"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/pages/SearchSummaryPage.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/pages/SearchSummaryPage.kt",
+      "category": "catalog-client",
+      "bytes": 19254,
+      "source_mtime_utc": "2026-09-28T22:57:26.816774+00:00",
+      "sha256": "36fad839bcc2290431edf11bef2b6283c168484ae8abe3f1394735d5802f124e"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/utils/Utils.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/utils/Utils.kt",
+      "category": "catalog-client",
+      "bytes": 3453,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "e6d574fd86384e1592cb9d39de041fcc4eb7b5e10b2347f2ad25ae1a56a5a498"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/utils/YouTubeUrlParser.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/utils/YouTubeUrlParser.kt",
+      "category": "catalog-client",
+      "bytes": 3181,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "1f98e7d77c9462256aaa54ce1e21af97df1c51e76b4da0e378c7bbed5d6e0689"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/YouTube.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/YouTube.kt",
+      "category": "catalog-client",
+      "bytes": 93310,
+      "source_mtime_utc": "2026-09-26T18:45:27.016196+00:00",
+      "sha256": "e38ab739f46a59d27701b857f4277fae12b495cd41fa5e6120fc3ec6bb19984c"
+    },
+    {
+      "source_relative_path": "innertube/src/main/kotlin/com/music/innertube/YouTubeConstants.kt",
+      "destination_relative_path": "reference/android/innertube/src/main/kotlin/com/music/innertube/YouTubeConstants.kt",
+      "category": "catalog-client",
+      "bytes": 151,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6d5b7f3ccb9e86659b974d1f4971a43eea11527b8191e3271398f2a88700bd06"
+    },
+    {
+      "source_relative_path": "innertube/src/test/kotlin/com/music/innertube/MainTest.kt",
+      "destination_relative_path": "reference/android/innertube/src/test/kotlin/com/music/innertube/MainTest.kt",
+      "category": "catalog-tests",
+      "bytes": 529,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "24cb5d5e51ac235dcb031c0171bf7b027c49f38cda16b34c84ffc5b65ee28802"
+    },
+    {
+      "source_relative_path": "innertube/src/test/kotlin/com/music/innertube/models/RunsTest.kt",
+      "destination_relative_path": "reference/android/innertube/src/test/kotlin/com/music/innertube/models/RunsTest.kt",
+      "category": "catalog-tests",
+      "bytes": 1458,
+      "source_mtime_utc": "2026-07-24T21:54:01+00:00",
+      "sha256": "6d56c4ece76acdbe3254c68f7618776a4a2b6c1f2981440d7cb2280b6be63002"
+    },
+    {
+      "source_relative_path": "innertube/src/test/kotlin/com/music/innertube/SearchVideoTest.kt",
+      "destination_relative_path": "reference/android/innertube/src/test/kotlin/com/music/innertube/SearchVideoTest.kt",
+      "category": "catalog-tests",
+      "bytes": 840,
+      "source_mtime_utc": "2026-07-25T13:44:43+00:00",
+      "sha256": "8608895cc5935a9f78c9e961de1cef303fa2d64b1d04f14c122a0b0ed168872c"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/Provider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/Provider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 10874,
+      "source_mtime_utc": "2026-10-27T08:39:16.983049+00:00",
+      "sha256": "d206aad4cb0e186802f962632952d1af583bc4492216febf42ca7cc63d101f3c"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YouTubeMusicModels.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YouTubeMusicModels.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 241,
+      "source_mtime_utc": "2026-07-19T14:08:57+00:00",
+      "sha256": "843f367b74ffa4aabe662284d5b78de137bf0dc00f7595081cda21a2e0949043"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YouTubeMusicProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YouTubeMusicProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 32525,
+      "source_mtime_utc": "2026-10-27T10:21:47.220920+00:00",
+      "sha256": "116563476f59b5939b4b3178da89ce968c074168a8fb9835a7d87fa6b53c7204"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/InnerTubeMusicProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/InnerTubeMusicProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 24359,
+      "source_mtime_utc": "2026-10-27T19:36:41.257055+00:00",
+      "sha256": "82c07a324877913a71b2ba1bf72f7de9a9a5ef1b282fc830d2e2eb4ba4a08c92"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/MusicSearchRouter.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/MusicSearchRouter.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 9771,
+      "source_mtime_utc": "2026-10-27T19:36:41.257055+00:00",
+      "sha256": "c4db9eac4e19aa50907d093208425cd009bcc91687abe0702196270adf1dee49"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/InnerTubeStreamResolver.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/InnerTubeStreamResolver.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8038,
+      "source_mtime_utc": "2026-09-29T14:51:53.464384+00:00",
+      "sha256": "c13edf3d7e2d7ba231b5e5478b1b392cfe792682f29803e97d4ab308e99ed05b"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/StreamResolverRouter.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/StreamResolverRouter.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2999,
+      "source_mtime_utc": "2026-10-27T23:00:21.414958+00:00",
+      "sha256": "e3496c743319f48ff9e2cb1851fe9afc2862bd84b097298a33663a87d69b7473"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YouTubeStreamResolver.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YouTubeStreamResolver.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 13375,
+      "source_mtime_utc": "2026-10-27T10:21:47.221920+00:00",
+      "sha256": "659677cdb614885dbadc853bac1edbcb6eaefae5b3b926758b21ea461c217a76"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/TrackStreamResolver.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/TrackStreamResolver.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1827,
+      "source_mtime_utc": "2026-07-24T22:55:48+00:00",
+      "sha256": "9e8914ddc3a5cb9629c0b259fafa2a508870431349de82eb130d663bfd89c4f8"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/StreamResolutionMemoryCache.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/StreamResolutionMemoryCache.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2951,
+      "source_mtime_utc": "2026-10-27T23:00:21.413957+00:00",
+      "sha256": "451750af4283c774f338e9d40c75966014afa2d5034ce68e9fd14d356f304236"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ResolvedUrlCache.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/ResolvedUrlCache.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2453,
+      "source_mtime_utc": "2026-07-20T08:55:05+00:00",
+      "sha256": "17c0bb385fe87c6add592f2c09f116c7a8ee009f4008b4455a86ec2341f1096f"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/StreamCache.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/StreamCache.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2404,
+      "source_mtime_utc": "2026-08-01T20:11:15+00:00",
+      "sha256": "56351bd5d5d92d10f0d666d2ca21dfcfb2d6efcc6cbbf98044a47220c4fe80f5"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YtHttpClients.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YtHttpClients.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1589,
+      "source_mtime_utc": "2026-07-19T18:31:44+00:00",
+      "sha256": "706baef842ab64b3ba722855e349f77e0126026ef8af988c6ce7101de0bc793f"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ExtractorPreference.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/ExtractorPreference.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1929,
+      "source_mtime_utc": "2026-07-24T22:01:50+00:00",
+      "sha256": "e8d717635bd69aeb56e23ec17072465b63139fba40aaade25d34d6e2cdc3f1db"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YouTubeVideoLink.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YouTubeVideoLink.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 920,
+      "source_mtime_utc": "2026-09-26T06:37:33.817554+00:00",
+      "sha256": "63da44298f928fa553b0cc0d7a5a58faf4b736a7dc9a76bc88631f03956e4ffc"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/AudioQualitySelection.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/AudioQualitySelection.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 641,
+      "source_mtime_utc": "2026-09-29T14:51:38.828128+00:00",
+      "sha256": "30a2372b02a3b4a72d84daf0ee4f43f92e45f699e557339b799e8fa9663eafde"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/CurrentCodecInfo.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/CurrentCodecInfo.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1844,
+      "source_mtime_utc": "2026-11-12T10:06:49.231164+00:00",
+      "sha256": "815d8165acf8fbfe051f268c510563e5033845a25433b2114e57074595f1ea06"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/TrackIdentity.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/TrackIdentity.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1391,
+      "source_mtime_utc": "2026-08-02T17:41:11+00:00",
+      "sha256": "45bef0eb71c457e57188cc581179af6056919b7f2ce8fef77398b67dc7d99c33"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/RecordingStorageKey.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/RecordingStorageKey.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 708,
+      "source_mtime_utc": "2026-10-27T08:43:47.573510+00:00",
+      "sha256": "96b21b201061504b8ba2e8a37586292a2eced556f1c2afe68ae7ca6c72f64f43"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaybackIdentity.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaybackIdentity.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 809,
+      "source_mtime_utc": "2026-10-25T20:14:56.009464+00:00",
+      "sha256": "795268033907c71745bbe0511f06a6745f76bc226c8e4bacef799802cf6e473a"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/RecordingIdentityMigration.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/RecordingIdentityMigration.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3415,
+      "source_mtime_utc": "2026-10-27T08:33:29.678753+00:00",
+      "sha256": "5c32013f55dbaecffcf1e19306104868477ade53323c30209f1785ae035d0d19"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/TrackSelection.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/TrackSelection.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2076,
+      "source_mtime_utc": "2026-07-25T23:23:41+00:00",
+      "sha256": "1cb951e7b5c433fea25779cf060c62c0ea22712a101c61469ec6717b0bcf0d2c"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SearchMatching.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SearchMatching.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6115,
+      "source_mtime_utc": "2026-07-24T21:29:11+00:00",
+      "sha256": "781ea74301af0843d1597139b3d500efe699d7f225e5c59407bcd90ac6de72a4"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SearchHistory.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SearchHistory.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3021,
+      "source_mtime_utc": "2026-07-24T20:53:48+00:00",
+      "sha256": "c27dc377ef8f738c124ac8e184b922d8405c2e0aa71d21b65bd89db43f06922f"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SearchViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SearchViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 22168,
+      "source_mtime_utc": "2026-09-28T22:51:15.746643+00:00",
+      "sha256": "513ed5317b68bd1a5031d62df3bb0ea61a5a6d4dbe86a32160f3f853205688b0"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/HomeViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/HomeViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 18550,
+      "source_mtime_utc": "2026-10-27T19:36:41.498094+00:00",
+      "sha256": "dbedf4da67d2867126567171537d36e99e9202b77b30dec76ccf7a41e904f088"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/UiState.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/UiState.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1947,
+      "source_mtime_utc": "2026-10-25T20:38:38.666524+00:00",
+      "sha256": "3615e27067c5536dab358ae123781612d55283aa24d499fbcd8a7b61716f7b01"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/MusicData.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/MusicData.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6474,
+      "source_mtime_utc": "2026-10-27T08:39:16.983049+00:00",
+      "sha256": "098fd365208ff3779779caf38b6488042e9742d16d0bee49f26dfcbaeaaee21e"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/MusicCatalogDiscovery.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/MusicCatalogDiscovery.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1045,
+      "source_mtime_utc": "2026-10-27T19:36:41.256052+00:00",
+      "sha256": "48f785e8aa70150849c9d407390ace281be52e84528c814bb570c62c8eb83307"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/DiscoveryRanking.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/DiscoveryRanking.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1986,
+      "source_mtime_utc": "2026-10-27T11:06:14.932988+00:00",
+      "sha256": "7b26cd99b37d7691cbfbaa94f54ffbc950c43d2c15964021196267ce739b33d6"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/RecommendationBlend.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/RecommendationBlend.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2071,
+      "source_mtime_utc": "2026-08-02T17:41:20+00:00",
+      "sha256": "2922d3d156db0d46a7b2801ae1cf2b0f5ba278361e389e53394b7c9b28ed73b0"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/AlbumPalette.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/AlbumPalette.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3322,
+      "source_mtime_utc": "2026-11-12T08:40:22.297307+00:00",
+      "sha256": "4c6e282d1474dd3f0e34c20423a306ff57b8ed6f9832a62f2487e856db2a15f8"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LibrarySorting.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LibrarySorting.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3775,
+      "source_mtime_utc": "2026-11-12T13:41:34.035740+00:00",
+      "sha256": "1ddc201044df9bb4c89447b870b6d8adc8273f036943675e98a72466fe409608"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LibraryViewPreferences.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LibraryViewPreferences.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2356,
+      "source_mtime_utc": "2026-11-07T12:13:49.420803+00:00",
+      "sha256": "01b97cb4d50615278b9cf784fc7ea48d6f25970c39661a716b9aba342cd2aaca"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LocalAudioProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LocalAudioProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6094,
+      "source_mtime_utc": "2026-07-28T00:40:13+00:00",
+      "sha256": "6a7587461be78f0aa796ccb3880107753c0bbd5299dd4618606baf808d1fe21e"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/DownloadDatabase.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/DownloadDatabase.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 27837,
+      "source_mtime_utc": "2026-11-07T12:56:43.444142+00:00",
+      "sha256": "26639bda85cedc042761400dac6b266fba5a36e57713ae77d841e6a3a2f71a90"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LikedSongsRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LikedSongsRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4102,
+      "source_mtime_utc": "2026-10-27T08:43:47.574510+00:00",
+      "sha256": "cce60168450a72d6d170bd3e8815ec051d6cdcf37d7e1587cfda8ad87a7c1981"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6854,
+      "source_mtime_utc": "2026-11-07T18:16:16.060317+00:00",
+      "sha256": "9df68077dfa7af4f4463b04a0f3d4e8540fe23269312ca91e135b5b1e483ec90"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/FollowedArtistsRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/FollowedArtistsRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3235,
+      "source_mtime_utc": "2026-07-26T14:17:08+00:00",
+      "sha256": "e81b4f1d13144ee11b5350279faf5a3b65c1973f6315f1a780b3cbac8bbfbda9"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaybackHistoryRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaybackHistoryRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6024,
+      "source_mtime_utc": "2026-11-07T11:15:49.167805+00:00",
+      "sha256": "b27a98930ca5e5429b97e7f007b776539f73ef3cb35eba6b6a4a5567c6fcadbf"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ListeningSession.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/ListeningSession.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4739,
+      "source_mtime_utc": "2026-10-27T11:06:14.931987+00:00",
+      "sha256": "2bb5123b7c7a9f161b1a06488294719f1458c02e8eec74e017465b810463f3fd"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/HistoryGrouping.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/HistoryGrouping.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2826,
+      "source_mtime_utc": "2026-09-26T11:54:25.755089+00:00",
+      "sha256": "11163c5084807a2483854606231d56339d77b73a148419a29b928471be74c53d"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/QueueRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/QueueRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 7962,
+      "source_mtime_utc": "2026-11-07T17:19:43.574000+00:00",
+      "sha256": "126f40c6bc6705c6266fc929a65792335698c83dcb098fda03f7e57dc0b2cda0"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/QueuePolicy.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/QueuePolicy.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2961,
+      "source_mtime_utc": "2026-10-25T20:14:56.010465+00:00",
+      "sha256": "9cc007a382d708bd526a9a82a6d96a78f6163e00bdda9e6548a03204e9ef5f1b"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/QueueRecovery.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/QueueRecovery.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 448,
+      "source_mtime_utc": "2026-09-26T06:38:23.632272+00:00",
+      "sha256": "936fb19347e662a42aa6e8322d3a96a89975673d9a6fba5b0acff0643f1419f6"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaybackResumptionCoordinator.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaybackResumptionCoordinator.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2138,
+      "source_mtime_utc": "2026-11-07T17:20:08.653602+00:00",
+      "sha256": "45c8cf8afbfcc94fda8bc366649fc25507b448a306de3f39622952786b5a66c1"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaybackControls.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaybackControls.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6890,
+      "source_mtime_utc": "2026-11-12T09:29:14.557610+00:00",
+      "sha256": "bb4bc86861c0fb15d1432717337f2e927c6c7a8daeb0a1ad17db537817cfbc00"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlayerViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlayerViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 47936,
+      "source_mtime_utc": "2026-10-27T23:08:28.846848+00:00",
+      "sha256": "3b2bec054e9e6fcd7529beefaf70139b4656d58766624b20481b96ce6a6ba36d"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SleepTimer.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SleepTimer.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 3230,
+      "source_mtime_utc": "2026-10-27T10:25:45.071732+00:00",
+      "sha256": "284f073be61104f4043ea9b260e493fbd549fe109664d74e8fa28a6e7e2a5eb0"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistCsv.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistCsv.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 5491,
+      "source_mtime_utc": "2026-11-07T18:12:32.103035+00:00",
+      "sha256": "171e4835f07a2e9b50c04d36a8c63138868afab4ae9acf6441a93faa242b54df"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistM3u.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistM3u.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4034,
+      "source_mtime_utc": "2026-11-07T17:51:48.253176+00:00",
+      "sha256": "182b3ca33dcd6c9bfe0a177eb0d12f92661fa0aabafdad3797adbea401a89440"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistShareCodec.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistShareCodec.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 13371,
+      "source_mtime_utc": "2026-11-07T18:36:04.357606+00:00",
+      "sha256": "6d35a2f5b5a52e58bfa8459de1f194ed45e780ba479a8db5f36ab2015eff2a95"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistPreloading.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistPreloading.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 621,
+      "source_mtime_utc": "2026-10-27T23:00:21.414958+00:00",
+      "sha256": "0c272313b5765714f441d156b756b8a225b924abc402ff25e80a5b8c8f55816d"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PlaylistImportViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PlaylistImportViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 6455,
+      "source_mtime_utc": "2026-11-07T18:12:32.130033+00:00",
+      "sha256": "a2e1532d4a2688013522906afe2b4cd907a4f5ebf64fdb248ff00ab70aa111a6"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsTiming.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsTiming.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1301,
+      "source_mtime_utc": "2026-10-25T20:44:38.756476+00:00",
+      "sha256": "1aa3b3855d9d0c5bbef9f00d58ee9c252fc2526306f9d489053403d57654fa95"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsLookupPolicy.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsLookupPolicy.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4358,
+      "source_mtime_utc": "2026-10-27T11:21:43.808347+00:00",
+      "sha256": "f0245afc7445297540a4519964d13c0a003292bae58a7d39cef8a003cd532dc6"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsRecordingMatch.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsRecordingMatch.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2355,
+      "source_mtime_utc": "2026-10-25T20:45:44.534519+00:00",
+      "sha256": "0216d04f44f0e530ee7e58532aba37d467583232c6e2313754afb2c753266825"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsHttp.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsHttp.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2200,
+      "source_mtime_utc": "2026-10-27T11:01:23.264503+00:00",
+      "sha256": "ccfc03b1f4d1d1f115f6397c8b62dca74f04bc057b515954a588eca3e5d8a2af"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsCacheStore.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsCacheStore.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 7530,
+      "source_mtime_utc": "2026-10-25T20:34:27.619177+00:00",
+      "sha256": "394f05ccc608fd7e807a84b277a939cf5ba2774e5b6ab0fe7f6563f9675a80ee"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LyricsViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LyricsViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 9475,
+      "source_mtime_utc": "2026-10-27T11:01:23.263502+00:00",
+      "sha256": "56977356efe3afcb3617a2af8fcc7a8eabb91c827f7af291174138e636739745"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/LrcLibProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/LrcLibProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 7414,
+      "source_mtime_utc": "2026-10-25T20:47:35.767121+00:00",
+      "sha256": "5627ebef1afa7e60a87e261baa6466617eca042e61eca614a80414f39a9a128e"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/BetterLyricsProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/BetterLyricsProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 2103,
+      "source_mtime_utc": "2026-10-27T11:01:23.263502+00:00",
+      "sha256": "a5967c59ef992bb62bd392b2d5c09cbf8fe9a6d363738a4d80bbafa9b9740f5a"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/KugouLyricsProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/KugouLyricsProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8363,
+      "source_mtime_utc": "2026-10-25T20:47:35.757121+00:00",
+      "sha256": "e17a14205d3504dc02855a5d68e52386a33052593ad6a2bf6a7b90e28e8b993f"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/YouLyPlusProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/YouLyPlusProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4961,
+      "source_mtime_utc": "2026-10-25T20:47:35.740121+00:00",
+      "sha256": "ea39a6372612455ea4efafdc0a3f4f96c1044fef11cc06cb224617e7b73b2305"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PaxSenixProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PaxSenixProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8852,
+      "source_mtime_utc": "2026-10-25T20:47:35.748121+00:00",
+      "sha256": "5c00727339aa795480ca59ba4ddc25306b82a1efbde4f3b2f25eb30f3db199c8"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SimpMusicProvider.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SimpMusicProvider.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4752,
+      "source_mtime_utc": "2026-10-25T20:47:35.731121+00:00",
+      "sha256": "b0ae4671e8080138438f0813b47ff8ccd4aa4cdc5c9965314a44809bd2626a1c"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/BackupDocument.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/BackupDocument.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8692,
+      "source_mtime_utc": "2026-11-07T12:05:51.196080+00:00",
+      "sha256": "4ec662520183a3d667b29109f37428252b5fbf067077937e0b5bb38d98b8c47c"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/BackupRepository.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/BackupRepository.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 26128,
+      "source_mtime_utc": "2026-11-07T16:33:43.767483+00:00",
+      "sha256": "e005c2b7a11a719c0d3a13a66a54ff1774117fb3c5b476ca0a96570170a179ad"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/BackupHistory.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/BackupHistory.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8062,
+      "source_mtime_utc": "2026-11-07T11:24:54.079160+00:00",
+      "sha256": "2b04bb18ed4d0957a8d922f48a8439f3f4fbf6cd78e12a51a1e4fd359139fcbd"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/PortableSettings.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/PortableSettings.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 8377,
+      "source_mtime_utc": "2026-11-13T14:51:45.355967+00:00",
+      "sha256": "6a7cde8908cbaa49e3ae707a85ece021745c1264b7ea3659eb480b0c5bc3fd16"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SettingsRestoreJournal.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SettingsRestoreJournal.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1507,
+      "source_mtime_utc": "2026-11-07T12:04:19.887203+00:00",
+      "sha256": "0ac6db1dd547c317d7e62c794c703c76e60726d5fd52820e5eb1ba59709312dc"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/AppSettingsModels.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/AppSettingsModels.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 11967,
+      "source_mtime_utc": "2026-11-13T14:51:45.354966+00:00",
+      "sha256": "d9d57f2af5837817e09f68242c9f50bcc3b268b6314e0ff50537c62fedb30894"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/AppSettingsViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/AppSettingsViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 20088,
+      "source_mtime_utc": "2026-11-13T14:51:45.355967+00:00",
+      "sha256": "b1da25d41d5c54c3169592086844072a142d4878bd192cd2684db2bb796f4873"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ThemeViewModel.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/ThemeViewModel.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 5375,
+      "source_mtime_utc": "2026-11-07T18:11:51.556637+00:00",
+      "sha256": "18c714ca17436ce46b2aba83fd4cd0ba52d4e76c7f5aff378ede14289b69c3d4"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/AtomicFiles.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/AtomicFiles.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 1430,
+      "source_mtime_utc": "2026-11-07T16:33:43.761973+00:00",
+      "sha256": "d31dee4072d409869471110120c667655859337a98dae956a5323f592f05d6f8"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SettingsRecoveryGate.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SettingsRecoveryGate.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 4326,
+      "source_mtime_utc": "2026-11-07T12:20:43.390727+00:00",
+      "sha256": "9577724eba52dd80a64528ea80d5979668b0a584b3309376a7ec0b62b8bb32a2"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/SettingsWrites.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/SettingsWrites.kt",
+      "category": "domain-and-platform-boundary-reference",
+      "bytes": 565,
+      "source_mtime_utc": "2026-11-07T18:11:51.546637+00:00",
+      "sha256": "655933796cd210d94812e3432924f98682d8ac99a07036a05aafecc2ac4c235e"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/AudioQualitySelectionTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/AudioQualitySelectionTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 610,
+      "source_mtime_utc": "2026-09-29T14:52:37.706733+00:00",
+      "sha256": "6da1374d27ebc7766ac39b0256ff51696167a7be1959794d859556b548d2d6e8"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/CurrentCodecInfoTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/CurrentCodecInfoTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1733,
+      "source_mtime_utc": "2026-11-12T10:06:49.232164+00:00",
+      "sha256": "2ddd3d4563f98346db0d51339b4b32403d8d98477159732e0dbfcd91a9fcaa01"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/TrackIdentityTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/TrackIdentityTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2012,
+      "source_mtime_utc": "2026-07-25T23:06:34+00:00",
+      "sha256": "08a213e48ab1b1b2d9dbb969bae69691d5199ab49b12bcd22d9110e42fc3b4e3"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/RecordingStorageKeyTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/RecordingStorageKeyTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1119,
+      "source_mtime_utc": "2026-10-27T08:43:47.574510+00:00",
+      "sha256": "39e517e8757ee381a1a2f8aa3d9b781eecab23819c50048d537504830e650565"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaybackIdentityTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaybackIdentityTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2948,
+      "source_mtime_utc": "2026-10-27T08:35:04.102068+00:00",
+      "sha256": "bc49150efce5ac7bfdc077279d4516182866efd18863193bb4799c316e81173f"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/TrackSelectionTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/TrackSelectionTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2539,
+      "source_mtime_utc": "2026-07-25T23:23:54+00:00",
+      "sha256": "2a1cd66ece566eb10bdf2452276d332c088a2e05ebdcc6e7a94565a216b79266"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/GeneralVideoSearchTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/GeneralVideoSearchTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 752,
+      "source_mtime_utc": "2026-09-26T12:39:21.992687+00:00",
+      "sha256": "bb24b48295c55069808817f5f37812ffe7b44b98515d3fb1e8f0a00582957256"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/MusicCatalogDiscoveryTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/MusicCatalogDiscoveryTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1784,
+      "source_mtime_utc": "2026-10-27T19:37:15.927529+00:00",
+      "sha256": "dad528a453f409a2291fc1a6d587956f529da88e805e5b714515f5cefba9772a"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/DiscoveryRankingTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/DiscoveryRankingTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2096,
+      "source_mtime_utc": "2026-10-27T11:03:53.312470+00:00",
+      "sha256": "5b50f2f34c987735bd0a2006ac669850bfb7b98fb401453c46f4027b58aa8353"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/DiscoveryEvaluationTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/DiscoveryEvaluationTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2393,
+      "source_mtime_utc": "2026-10-27T11:06:14.934990+00:00",
+      "sha256": "5ab5fc161c221fcaf051977b4254bf48984fb0d33a37a039099d35ab7dcf3b49"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LibrarySortingTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LibrarySortingTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2650,
+      "source_mtime_utc": "2026-11-12T13:41:34.038852+00:00",
+      "sha256": "e3b125ffe0d731b63441c64c28ff1dbf98e500af89456de1f8cf4bf43a13564b"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LibraryViewPreferencesTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LibraryViewPreferencesTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1677,
+      "source_mtime_utc": "2026-10-25T20:49:28.266674+00:00",
+      "sha256": "982f3cb0195e2e40bc1a8bd4193ce744992b7220fe5b538fb63802edde662abd"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/ListeningSessionTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/ListeningSessionTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 4651,
+      "source_mtime_utc": "2026-10-27T11:10:23.681685+00:00",
+      "sha256": "c1472866500f6fff80179f4ebc14c4a75e8d88e13370aed85c8cd3d698cc2888"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/ChronologicalHistoryTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/ChronologicalHistoryTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 839,
+      "source_mtime_utc": "2026-09-26T11:45:51.020564+00:00",
+      "sha256": "827ac336d1b754f6f1a54cf2e1cfc5b10fd3e46bd0c3b9adccc1f96b22122e01"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/HistoryGroupingTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/HistoryGroupingTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3716,
+      "source_mtime_utc": "2026-09-26T11:45:41.631038+00:00",
+      "sha256": "ed935a3373a5b8fc136c963f0e65c4ecb803bfca1a5e48f426c8475fbeaf2e9d"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/QueuePolicyTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/QueuePolicyTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1872,
+      "source_mtime_utc": "2026-09-30T22:01:51.825455+00:00",
+      "sha256": "00d809f5a9a5be6a7dc8fbd87402411f1f7b54282671a8b5f7f48a033f7fa4cd"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/QueueTraversalTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/QueueTraversalTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1342,
+      "source_mtime_utc": "2026-09-29T14:31:28.400159+00:00",
+      "sha256": "1dd2b2eba27963a599962bb929e89f58056f0fc851af013a8e1791c78edac1eb"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/OfflineQueueRecoveryTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/OfflineQueueRecoveryTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1016,
+      "source_mtime_utc": "2026-09-29T14:19:20.752148+00:00",
+      "sha256": "570d38200f09a05b68e1502b94ad308719807cb3a65baaf30b7032007af7e633"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/RestoredShuffleOrderTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/RestoredShuffleOrderTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 687,
+      "source_mtime_utc": "2026-11-07T17:19:43.574999+00:00",
+      "sha256": "194981289b90d3e7e855babe846a2f757b25bd3fbfbace1e1e5b9f7ac3baea5d"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/RestoredPlaybackUriTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/RestoredPlaybackUriTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1611,
+      "source_mtime_utc": "2026-10-27T19:37:15.926528+00:00",
+      "sha256": "ee7ef225da000f0d74434449228ba220dfb1abd8c02ba9f329be66af81111d59"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaybackResumeValidationTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaybackResumeValidationTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1773,
+      "source_mtime_utc": "2026-11-07T17:20:39.542207+00:00",
+      "sha256": "94d4db85c43056ad40b2321b81e3de0391bdec19102e3282b096c61aab9d6a9a"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaybackResumptionCoordinatorTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaybackResumptionCoordinatorTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3722,
+      "source_mtime_utc": "2026-11-07T17:13:36.325412+00:00",
+      "sha256": "06dc7822f442e9461dcad6fe1b62b2356d5c424c9f1e4bfcb78cec6ddd057dff"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaybackActionStateTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaybackActionStateTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 659,
+      "source_mtime_utc": "2026-10-27T23:06:37.125483+00:00",
+      "sha256": "204fdbfd459859f1600f61a219d98630d2f65928a01acf957a08a6213f324307"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/SearchPlaybackPolicyTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/SearchPlaybackPolicyTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2009,
+      "source_mtime_utc": "2026-10-25T20:16:06.725000+00:00",
+      "sha256": "6580dc141c403e2e8554f803fc698518a9ee0e44bce017db3a3ad261f6188a57"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/StreamResolutionMemoryCacheTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/StreamResolutionMemoryCacheTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 4774,
+      "source_mtime_utc": "2026-10-27T23:06:37.125483+00:00",
+      "sha256": "a288d54131ea962052356edcdf180c47028714a832f5eb748271b7077cadb11f"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/ResolvedUrlCacheTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/ResolvedUrlCacheTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3907,
+      "source_mtime_utc": "2026-07-20T08:57:09+00:00",
+      "sha256": "352392fe3c1a022bea3cce4a760d41f306bef5f5821258edf188f1ac02ce52a3"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LyricsTimingTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LyricsTimingTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2907,
+      "source_mtime_utc": "2026-09-30T09:43:59.325469+00:00",
+      "sha256": "5bb03b069a4fc5ae14d8cb4268cae0c6f0e258b38a2e1dcbe44f3d7a47f2ee0d"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LyricsLookupPolicyTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LyricsLookupPolicyTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3294,
+      "source_mtime_utc": "2026-10-27T11:21:43.809353+00:00",
+      "sha256": "6cc9cabcff977fff31e3982ba85c84e76f18eae6ac97b4e387364fd2c768572f"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LyricsRecordingMatchTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LyricsRecordingMatchTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1912,
+      "source_mtime_utc": "2026-10-25T20:47:35.440510+00:00",
+      "sha256": "9f818f91e6d81ef175a8c9f90c172ccd6f7fc878a5c909b5a81f7be2dd79928a"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/LyricsCacheStoreTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/LyricsCacheStoreTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2319,
+      "source_mtime_utc": "2026-09-30T10:03:11.049106+00:00",
+      "sha256": "117e81ce30a4d4534c6d223f4d99cb6787e47d817a9e5e862f63afcf569e2090"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/BetterLyricsContractTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/BetterLyricsContractTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2548,
+      "source_mtime_utc": "2026-10-27T11:02:34.872945+00:00",
+      "sha256": "b984de784654e53342845a7cbdb4c557132ab9a7c062efa0ea68e723bac379d1"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/TtmlDocumentParserTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/TtmlDocumentParserTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3012,
+      "source_mtime_utc": "2026-10-25T20:38:38.957524+00:00",
+      "sha256": "2a0a62e9302a8f74c5d0832c91400e2f5873f3d339d9fd4fa3fc2a916bcc988f"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistCsvTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistCsvTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 4249,
+      "source_mtime_utc": "2026-07-25T22:33:11+00:00",
+      "sha256": "229acaebe43ed5c5df00b414e45e8233056080cb0f4ca9bf582157f06651612c"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistShareCodecTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistShareCodecTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3330,
+      "source_mtime_utc": "2026-09-27T08:23:31.890735+00:00",
+      "sha256": "7f762bb57ad7f6c2eb31c829b6024fef167aec3e5773787c54041e40f855fdab"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistImportBoundsTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistImportBoundsTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2392,
+      "source_mtime_utc": "2026-11-07T17:53:40.846364+00:00",
+      "sha256": "037d8988e390baefa95f64acaaa1ff62cdd3c0a6036a52341be315fcb8c998ed"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistImportRecoveryTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistImportRecoveryTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 5429,
+      "source_mtime_utc": "2026-11-07T18:12:32.131034+00:00",
+      "sha256": "4a356b01b01ffd3b6953adadac3b324775f364f569059e07fcbe0475771f227e"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistDeleteTransactionTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistDeleteTransactionTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1602,
+      "source_mtime_utc": "2026-11-07T18:16:16.061316+00:00",
+      "sha256": "7edd3c47fe32ec335c2e5c1c45459fc4e7d479c0c1ae793ee35cafb1c4b8523b"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PlaylistPreloadingTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PlaylistPreloadingTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 2170,
+      "source_mtime_utc": "2026-10-27T23:03:46.494110+00:00",
+      "sha256": "51d24381a84cedc5050f117b93fedc1722746a22445f4bd5b20f090ef79bf982"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/BackupRepositoryRoundTripTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/BackupRepositoryRoundTripTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 4685,
+      "source_mtime_utc": "2026-11-07T12:32:02.842232+00:00",
+      "sha256": "14dfa24b275c1a010d382bfb4cb2031726caefc84fdf17732e1310f65ab54313"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/BackupRepositoryTransactionTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/BackupRepositoryTransactionTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 14162,
+      "source_mtime_utc": "2026-11-07T12:09:20.344213+00:00",
+      "sha256": "84f249caf44be10fa081276dbf13e963568358eb9355c386695d747dc792f975"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/BackupHistoryRestoreTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/BackupHistoryRestoreTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 13652,
+      "source_mtime_utc": "2026-11-07T11:24:54.079160+00:00",
+      "sha256": "06051bd3b7a2164151671df8f1efce7f7c6bc17b9281fed53c81b1894f6e6561"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/PortableSettingsRestoreTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/PortableSettingsRestoreTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 17761,
+      "source_mtime_utc": "2026-11-13T15:08:52.555320+00:00",
+      "sha256": "71da677d19645eead1d7a179eaddf79410883a530f0f3f084b4df6791fb4a692"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/SettingsRecoveryGateTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/SettingsRecoveryGateTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 3975,
+      "source_mtime_utc": "2026-11-07T12:21:12.271873+00:00",
+      "sha256": "0b65517eb40059bf59cbfabc14aca948cdd432c4e70bbe415c5f0f93eb08c50b"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/SettingsWriteFailureTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/SettingsWriteFailureTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 962,
+      "source_mtime_utc": "2026-11-07T18:11:51.558661+00:00",
+      "sha256": "6ecd6a67e784593fbf661c6c89a03d160303a4a2e02a6706563e9bb73606be5e"
+    },
+    {
+      "source_relative_path": "app/src/test/java/com/example/AtomicFilesTest.kt",
+      "destination_relative_path": "reference/android/app/src/test/java/com/example/AtomicFilesTest.kt",
+      "category": "behavior-test-reference",
+      "bytes": 1862,
+      "source_mtime_utc": "2026-11-07T16:34:49.523975+00:00",
+      "sha256": "f8b1a85debed135cb5a3390787220fc4071127925c6f61abd55899bd68279e3b"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/TtmlDocumentParser.kt",
+      "destination_relative_path": "reference/android/app/src/main/java/com/example/TtmlDocumentParser.kt",
+      "category": "lyrics-parser-reference",
+      "bytes": 6980,
+      "source_mtime_utc": "2026-10-27T11:01:23.264503+00:00",
+      "sha256": "cb888758eba425ac50ed8eb6bd6ff5cf80213d85c93234893ac5ff781d4ae806"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ui/theme/DesignTokens.kt",
+      "destination_relative_path": "reference/design/android-theme/DesignTokens.kt",
+      "category": "theme-reference",
+      "bytes": 540,
+      "source_mtime_utc": "2026-09-28T14:43:40.910012+00:00",
+      "sha256": "34272471d70fa3361fabb2472eed0e96adad734efe0dd0c591fa7f15569df2d4"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ui/theme/Motion.kt",
+      "destination_relative_path": "reference/design/android-theme/Motion.kt",
+      "category": "theme-reference",
+      "bytes": 1220,
+      "source_mtime_utc": "2026-07-27T17:47:49+00:00",
+      "sha256": "6a0e2f45fc2171dbce82122caf81cde7e91dd91710cf6877ab36b0bccd834c58"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ui/theme/ReducedMotion.kt",
+      "destination_relative_path": "reference/design/android-theme/ReducedMotion.kt",
+      "category": "theme-reference",
+      "bytes": 1415,
+      "source_mtime_utc": "2026-09-28T14:45:25.439631+00:00",
+      "sha256": "452ab75d014ac57b2eed243ad53c8f8e9a2c3f9654c22493832c19ee20ec5206"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ui/theme/Theme.kt",
+      "destination_relative_path": "reference/design/android-theme/Theme.kt",
+      "category": "theme-reference",
+      "bytes": 4969,
+      "source_mtime_utc": "2026-09-28T15:43:44.618503+00:00",
+      "sha256": "0f8df0986da1cc69acb06befd78f2e191dbf2c8d42512d5fce52abbf609dfef2"
+    },
+    {
+      "source_relative_path": "app/src/main/java/com/example/ui/theme/Type.kt",
+      "destination_relative_path": "reference/design/android-theme/Type.kt",
+      "category": "theme-reference",
+      "bytes": 6030,
+      "source_mtime_utc": "2026-09-28T16:39:31.163275+00:00",
+      "sha256": "04f570055c43b8b0c2e8b094d3538a9c5cee0ec090f35960426a3ef9a082308c"
+    },
+    {
+      "source_relative_path": "docs/screenshots/Home.jpg",
+      "destination_relative_path": "reference/design/screenshots/Home.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 721655,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "8d1a5cc5f9f752f57a7a8be640ead3a107ba18870cfbc950461d099ebd7a55af"
+    },
+    {
+      "source_relative_path": "docs/screenshots/Library.jpg",
+      "destination_relative_path": "reference/design/screenshots/Library.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 720345,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "5ef9b6b2f75c14c10428ce205dc10c71650b62832323283bcd8df977a995012b"
+    },
+    {
+      "source_relative_path": "docs/screenshots/Lyrics.jpg",
+      "destination_relative_path": "reference/design/screenshots/Lyrics.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 721930,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "03d2bb63729572d969e794346f7d83fca7deb3024cdf7ae2e45f325a5ccdc7f8"
+    },
+    {
+      "source_relative_path": "docs/screenshots/MuseChart.jpg",
+      "destination_relative_path": "reference/design/screenshots/MuseChart.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 817098,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "4742065ef7171de5b2188cbdeb53bf46d73ef5bc4297d48a62cfd89af42fe830"
+    },
+    {
+      "source_relative_path": "docs/screenshots/Player.jpg",
+      "destination_relative_path": "reference/design/screenshots/Player.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 819374,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "7e165259ddda92ae03514538e54c7b9b20328d008ce708763f4b2b7aaf25c5ce"
+    },
+    {
+      "source_relative_path": "docs/screenshots/Player_2.jpg",
+      "destination_relative_path": "reference/design/screenshots/Player_2.jpg",
+      "category": "historical-screen-reference",
+      "bytes": 965208,
+      "source_mtime_utc": "2026-09-28T11:31:36+00:00",
+      "sha256": "474bc201dfddf1f3ccfa3604758288e5b9f4b59d6b0d214d4f7be0bca04e2b37"
+    },
+    {
+      "source_relative_path": "app/src/main/assets/licenses/Doto-OFL.txt",
+      "destination_relative_path": "reference/android/app/src/main/assets/licenses/Doto-OFL.txt",
+      "category": "upstream-license-text",
+      "bytes": 4381,
+      "source_mtime_utc": "2026-09-28T23:59:25.347216+00:00",
+      "sha256": "ec9603b3152b50f407bb2b07af9fbe0f367cf1d1e30fbadb858db049245c91e2"
+    },
+    {
+      "source_relative_path": "app/src/main/assets/licenses/Haze-LICENSE.txt",
+      "destination_relative_path": "reference/android/app/src/main/assets/licenses/Haze-LICENSE.txt",
+      "category": "upstream-license-text",
+      "bytes": 11357,
+      "source_mtime_utc": "2026-10-27T17:57:04.774894+00:00",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "source_relative_path": "app/src/main/assets/licenses/Haze-NOTICE.txt",
+      "destination_relative_path": "reference/android/app/src/main/assets/licenses/Haze-NOTICE.txt",
+      "category": "upstream-license-text",
+      "bytes": 249,
+      "source_mtime_utc": "2026-11-12T22:24:11.903506+00:00",
+      "sha256": "3b3c4db1573a9693e40a8eaea64dfa037634ff7555bc879a16cc7014995b8b05"
+    },
+    {
+      "source_relative_path": "app logo/Museflow logo 2 for beta.png",
+      "destination_relative_path": "assets/branding/museflow-beta-logo.png",
+      "category": "branding",
+      "bytes": 8177271,
+      "source_mtime_utc": "2026-07-19T14:08:59+00:00",
+      "sha256": "7b5933cc547bbb4c81b4acb2310a8d9a77577df2bcee77b69792615144a894e2"
+    },
+    {
+      "source_relative_path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "destination_relative_path": "assets/branding/android-launcher.webp",
+      "category": "branding",
+      "bytes": 5096,
+      "source_mtime_utc": "2026-07-19T14:08:57+00:00",
+      "sha256": "3b14940a2b172a447e68b394421fea8f80ad85f963266b4550874e569b0d02b5"
+    },
+    {
+      "source_relative_path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "destination_relative_path": "assets/branding/android-launcher-foreground.png",
+      "category": "branding",
+      "bytes": 21159,
+      "source_mtime_utc": "2026-07-19T14:08:57+00:00",
+      "sha256": "5d2b8e707870ddf40dd9b457b6fefe0fe664ea10773f5d4dd8059b9ee9894848"
+    },
+    {
+      "source_relative_path": "app/src/main/res/font/doto.ttf",
+      "destination_relative_path": "assets/fonts/doto.ttf",
+      "category": "optional-font",
+      "bytes": 174188,
+      "source_mtime_utc": "2026-09-28T15:35:07.673240+00:00",
+      "sha256": "12aadc8d9b95025d6d135af4ac58ef3fe98c1bdfab306ac762afae912f7b92b2"
+    },
+    {
+      "source_relative_path": "app/src/main/assets/licenses/Doto-OFL.txt",
+      "destination_relative_path": "assets/fonts/Doto-OFL.txt",
+      "category": "font-license",
+      "bytes": 4381,
+      "source_mtime_utc": "2026-09-28T23:59:25.347216+00:00",
+      "sha256": "ec9603b3152b50f407bb2b07af9fbe0f367cf1d1e30fbadb858db049245c91e2"
+    }
+  ],
+  "generated_files": [
+    {
+      "destination_relative_path": ".gitignore",
+      "bytes": 248,
+      "sha256": "671104b7509da1ca3c1da748a152a7f924e05b73f8d607aacdecb95b49097241"
+    },
+    {
+      "destination_relative_path": ".gitleaks.toml",
+      "bytes": 428,
+      "sha256": "941e3c6cf9b4e55c5151730deaa9a49d48d9ee744bf5838768efb682056bc877"
+    },
+    {
+      "destination_relative_path": "README.md",
+      "bytes": 1883,
+      "sha256": "e4e80c500489be432f9c6db96592520908f784c26443ae0683d96421f0cfb9ac"
+    },
+    {
+      "destination_relative_path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1438,
+      "sha256": "a34141ce73831f5b708c4750cabd8ff43c5047e2f483c9129e5df1b48d1b06a1"
+    },
+    {
+      "destination_relative_path": "docs/ARCHITECTURE.md",
+      "bytes": 3695,
+      "sha256": "f207add02dbc687641c3cd08795f5ef4f1fb3b159b056074cd23dc37c63b7217"
+    },
+    {
+      "destination_relative_path": "docs/DESIGN.md",
+      "bytes": 1770,
+      "sha256": "99124b0d623700ccad21c0fc26fde5a3c525df6e153c32376568f177f9145b39"
+    },
+    {
+      "destination_relative_path": "docs/ENVIRONMENT.md",
+      "bytes": 2069,
+      "sha256": "5461dfa1a6e089aa2586eaa13c0b5953156bf00d4ac5e8159fba1e5d5e348a68"
+    },
+    {
+      "destination_relative_path": "docs/MILESTONES.md",
+      "bytes": 2776,
+      "sha256": "fa39933b22a8bd7897614d39616989a373e887a314fc249e93ba3f56f58e5b4e"
+    },
+    {
+      "destination_relative_path": "docs/PERFORMANCE.md",
+      "bytes": 1974,
+      "sha256": "32c9323b8e28c662470085e9aae63c3cf3ea0d864197ddadc4ef860120e69a2b"
+    },
+    {
+      "destination_relative_path": "docs/PLAN.md",
+      "bytes": 3406,
+      "sha256": "28768be7ed959d027a2620c7657e00206d6c5de2c7e279b553f2e2b85b861566"
+    },
+    {
+      "destination_relative_path": "docs/PREPARATION-CHECKS.md",
+      "bytes": 1731,
+      "sha256": "324c0ed3872f6b1d1d34d6ff6b73a99e72bf068c7477c32c6025e398a38b30c9"
+    },
+    {
+      "destination_relative_path": "docs/REFERENCE-GUIDE.md",
+      "bytes": 2862,
+      "sha256": "97b42bd9c416b6c01f567a1a18b6f2d858cb7e729cf2a877bf5ba085c6e3e771"
+    },
+    {
+      "destination_relative_path": "reference/android/README-REFERENCE.md",
+      "bytes": 856,
+      "sha256": "5a3a5732744d87386db189ae77db3cdd0cd3762e748dee05caef8d2becf70056"
+    }
+  ],
+  "manifest_self_hash_excluded": true
+}

@@ -1,0 +1,11 @@
+title = "MuseFlow PC reference credential scanning"
+[extend]
+useDefault = true
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Existing reviewed public InnerTube web-client constant; exact path and value only"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^reference/android/innertube/src/main/kotlin/com/music/innertube/InnerTube\.kt$''']
+regexes = ['''^AIzaSyC9XL3ZjWddXya6X74dJoCTL\-WEYFDNX3$''']

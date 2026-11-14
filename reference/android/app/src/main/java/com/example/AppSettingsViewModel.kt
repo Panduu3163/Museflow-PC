@@ -1,0 +1,298 @@
+package com.example
+
+import android.app.Application
+import android.content.Context
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+
+import androidx.datastore.preferences.core.floatPreferencesKey
+import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+
+internal val Context.appSettingsDataStore by preferencesDataStore(name = "app_settings_prefs")
+
+private object AppSettingsKeys {
+    val LIQUID_GLASS_ACCENTS = booleanPreferencesKey("liquid_glass_accents")
+    val LIQUID_GLASS_TRANSPORT_LAYOUT = stringPreferencesKey("liquid_glass_transport_layout")
+    val NAVIGATION_STYLE = stringPreferencesKey("navigation_style")
+    val NAVIGATION_HOLD_AND_SLIDE = booleanPreferencesKey("navigation_hold_and_slide")
+    val MINI_PLAYER_BACKGROUND_STYLE = stringPreferencesKey("mini_player_background_style")
+
+    val PLAYER_BACKGROUND_STYLE = stringPreferencesKey("player_background_style")
+    val HIDE_PLAYER_THUMBNAIL = booleanPreferencesKey("hide_player_thumbnail")
+    val THUMBNAIL_CORNER_RADIUS = intPreferencesKey("thumbnail_corner_radius")
+    val CROP_ALBUM_ART = booleanPreferencesKey("crop_album_art")
+    val PLAYER_BUTTON_COLOR = stringPreferencesKey("player_button_color")
+    val PLAYER_SLIDER_STYLE = stringPreferencesKey("player_slider_style")
+    val PLAYER_TRANSPORT_STYLE = stringPreferencesKey("player_transport_style")
+    val SWIPE_TO_CHANGE_SONG_ENABLED = booleanPreferencesKey("swipe_to_change_song")
+    val SHOW_ANIMATED_CANVAS = booleanPreferencesKey("show_animated_canvas")
+    val SKIP_SILENCE = booleanPreferencesKey("skip_silence")
+    val PERSISTENT_QUEUE = booleanPreferencesKey("persistent_queue")
+    val PRELOAD_NEXT_TRACK = booleanPreferencesKey("preload_next_track")
+    val AUDIO_QUALITY_MODE = stringPreferencesKey("audio_quality_mode")
+    val AUDIO_NORMALIZATION_ENABLED = booleanPreferencesKey("audio_normalization_enabled")
+    val CROSSFADE_ENABLED = booleanPreferencesKey("crossfade_enabled")
+    val CROSSFADE_DURATION_MS = intPreferencesKey("crossfade_duration_ms")
+    val BASS_BOOST_ENABLED = booleanPreferencesKey("bass_boost_enabled")
+    val BASS_BOOST_INTENSITY = intPreferencesKey("bass_boost_intensity")
+    val CROSSFEED_ENABLED = booleanPreferencesKey("crossfeed_enabled")
+    val CROSSFEED_INTENSITY = intPreferencesKey("crossfeed_intensity")
+    val ROTATING_THUMBNAIL_ANIMATION = booleanPreferencesKey("rotating_thumbnail_animation")
+    val SHOW_COMMENT_BUTTON = booleanPreferencesKey("show_comment_button")
+    val SHOW_CODEC_INFO = booleanPreferencesKey("show_codec_info")
+    val MINI_PLAYER_SWIPE_SENSITIVITY = intPreferencesKey("mini_player_swipe_sensitivity")
+
+    val LYRICS_PROVIDER_ORDER = stringPreferencesKey("lyrics_provider_order")
+    val LYRICS_TEXT_POSITION = stringPreferencesKey("lyrics_text_position")
+    val WORD_ANIMATION_STYLE = stringPreferencesKey("word_animation_style")
+    val GLOWING_LYRICS_EFFECT = booleanPreferencesKey("glowing_lyrics_effect")
+    val BLUR_INACTIVE_LINES = booleanPreferencesKey("blur_inactive_lines")
+    val LYRICS_TEXT_SIZE = intPreferencesKey("lyrics_text_size")
+    val LYRICS_LINE_SPACING = floatPreferencesKey("lyrics_line_spacing")
+    val CHANGE_LYRICS_ON_CLICK = booleanPreferencesKey("change_lyrics_on_click")
+    val AUTO_SCROLL_LYRICS = booleanPreferencesKey("auto_scroll_lyrics")
+    val SWIPE_SONG_IN_FULLSCREEN_LYRICS = booleanPreferencesKey("swipe_song_in_fullscreen_lyrics")
+    val SHOW_PLAY_PAUSE_OVERLAY_ON_THUMBNAIL = booleanPreferencesKey("show_play_pause_overlay_on_thumbnail")
+    val HIDE_STATUS_BAR_IN_FULLSCREEN_LYRICS = booleanPreferencesKey("hide_status_bar_in_fullscreen_lyrics")
+
+    val DEFAULT_OPEN_TAB = stringPreferencesKey("default_open_tab")
+    val DEFAULT_LIBRARY_CHIP = stringPreferencesKey("default_library_chip")
+    val SWIPE_SONG_TO_QUEUE = booleanPreferencesKey("swipe_song_to_queue")
+    val ENABLE_HAPTICS = booleanPreferencesKey("enable_haptics")
+    val SWIPE_SONG_TO_REMOVE_FROM_PLAYLIST = booleanPreferencesKey("swipe_song_to_remove_from_playlist")
+    val GRID_CELL_SIZE = stringPreferencesKey("grid_cell_size")
+    val DISPLAY_DENSITY = stringPreferencesKey("display_density")
+    val FONT_STYLE = stringPreferencesKey("font_style")
+
+    val SHOW_LIKED_PLAYLIST = booleanPreferencesKey("show_liked_playlist")
+    val SHOW_DOWNLOADED_PLAYLIST = booleanPreferencesKey("show_downloaded_playlist")
+    val SHOW_EXPORTED_PLAYLIST = booleanPreferencesKey("show_exported_playlist")
+    val SHOW_TOP_PLAYLIST = booleanPreferencesKey("show_top_playlist")
+    val SHOW_CACHED_PLAYLIST = booleanPreferencesKey("show_cached_playlist")
+    val SHOW_RECENTLY_PLAYED_SHORTCUT = booleanPreferencesKey("show_recently_played_shortcut")
+
+    val DISABLE_SCREENSHOTS = booleanPreferencesKey("disable_screenshots")
+}
+
+private inline fun <reified T : Enum<T>> Preferences.enumOrDefault(
+    key: Preferences.Key<String>,
+    default: T
+): T = this[key]?.let { saved -> runCatching { enumValueOf<T>(saved) }.getOrNull() } ?: default
+
+/** Internal, not private: [PlaybackService] reads playback-quality settings directly - a
+ * Service can't own a ViewModel, and these preferences drive the player itself. */
+internal class AppSettingsRepository(private val context: Context) {
+    val state: Flow<AppSettingsState> = context.appSettingsDataStore.data.map { prefs ->
+        AppSettingsState(
+            isLoaded = true,
+            miniPlayerBackgroundStyle = prefs.enumOrDefault(AppSettingsKeys.MINI_PLAYER_BACKGROUND_STYLE, BackgroundStyle.Solid),
+
+            playerBackgroundStyle = prefs.enumOrDefault(AppSettingsKeys.PLAYER_BACKGROUND_STYLE, BackgroundStyle.Solid),
+            hidePlayerThumbnail = prefs[AppSettingsKeys.HIDE_PLAYER_THUMBNAIL] ?: false,
+            thumbnailCornerRadius = prefs[AppSettingsKeys.THUMBNAIL_CORNER_RADIUS] ?: 12,
+            cropAlbumArt = prefs[AppSettingsKeys.CROP_ALBUM_ART] ?: true,
+            playerButtonColor = prefs.enumOrDefault(AppSettingsKeys.PLAYER_BUTTON_COLOR, PlayerButtonColorOption.Primary),
+            playerSliderStyle = prefs.enumOrDefault(AppSettingsKeys.PLAYER_SLIDER_STYLE, PlayerSliderStyle.Default),
+            playerTransportStyle = prefs.enumOrDefault(AppSettingsKeys.PLAYER_TRANSPORT_STYLE, PlayerTransportStyle.Static),
+            liquidGlassTransportLayout = prefs.enumOrDefault(AppSettingsKeys.LIQUID_GLASS_TRANSPORT_LAYOUT, LiquidGlassTransportLayout.Separate),
+            liquidGlassAccents = prefs[AppSettingsKeys.LIQUID_GLASS_ACCENTS] ?: false,
+            swipeToChangeSongEnabled = prefs[AppSettingsKeys.SWIPE_TO_CHANGE_SONG_ENABLED] ?: true,
+            showAnimatedCanvas = prefs[AppSettingsKeys.SHOW_ANIMATED_CANVAS] ?: false,
+            rotatingThumbnailAnimation = prefs[AppSettingsKeys.ROTATING_THUMBNAIL_ANIMATION] ?: false,
+            showCommentButton = prefs[AppSettingsKeys.SHOW_COMMENT_BUTTON] ?: false,
+            showCodecInfo = prefs[AppSettingsKeys.SHOW_CODEC_INFO] ?: false,
+            miniPlayerSwipeSensitivity = prefs[AppSettingsKeys.MINI_PLAYER_SWIPE_SENSITIVITY] ?: 50,
+
+            lyricsProviderOrder = LyricsProviderId.deserialize(prefs[AppSettingsKeys.LYRICS_PROVIDER_ORDER] ?: ""),
+            lyricsTextPosition = prefs.enumOrDefault(AppSettingsKeys.LYRICS_TEXT_POSITION, LyricsTextPosition.Center),
+            wordAnimationStyle = prefs.enumOrDefault(AppSettingsKeys.WORD_ANIMATION_STYLE, WordAnimationStyle.Fade),
+            glowingLyricsEffect = prefs[AppSettingsKeys.GLOWING_LYRICS_EFFECT] ?: false,
+            blurInactiveLines = prefs[AppSettingsKeys.BLUR_INACTIVE_LINES] ?: true,
+            lyricsTextSize = prefs[AppSettingsKeys.LYRICS_TEXT_SIZE] ?: 20,
+            lyricsLineSpacing = prefs[AppSettingsKeys.LYRICS_LINE_SPACING] ?: 1.2f,
+            changeLyricsOnClick = prefs[AppSettingsKeys.CHANGE_LYRICS_ON_CLICK] ?: true,
+            autoScrollLyrics = prefs[AppSettingsKeys.AUTO_SCROLL_LYRICS] ?: true,
+            swipeSongInFullscreenLyrics = prefs[AppSettingsKeys.SWIPE_SONG_IN_FULLSCREEN_LYRICS] ?: true,
+            showPlayPauseOverlayOnThumbnail = prefs[AppSettingsKeys.SHOW_PLAY_PAUSE_OVERLAY_ON_THUMBNAIL] ?: true,
+            hideStatusBarInFullscreenLyrics = prefs[AppSettingsKeys.HIDE_STATUS_BAR_IN_FULLSCREEN_LYRICS] ?: false,
+
+            defaultOpenTab = prefs.enumOrDefault(AppSettingsKeys.DEFAULT_OPEN_TAB, DefaultTab.Home),
+            skipSilence = prefs[AppSettingsKeys.SKIP_SILENCE] ?: false,
+            persistentQueue = prefs[AppSettingsKeys.PERSISTENT_QUEUE] ?: true,
+            preloadNextTrack = prefs[AppSettingsKeys.PRELOAD_NEXT_TRACK] ?: true,
+            audioQualityMode = prefs.enumOrDefault(AppSettingsKeys.AUDIO_QUALITY_MODE, AudioQualityMode.BestAvailable),
+            audioNormalizationEnabled = prefs[AppSettingsKeys.AUDIO_NORMALIZATION_ENABLED] ?: false,
+            crossfadeEnabled = prefs[AppSettingsKeys.CROSSFADE_ENABLED] ?: false,
+            crossfadeDurationMs = prefs[AppSettingsKeys.CROSSFADE_DURATION_MS] ?: 4000,
+            bassBoostEnabled = prefs[AppSettingsKeys.BASS_BOOST_ENABLED] ?: false,
+            bassBoostIntensity = prefs[AppSettingsKeys.BASS_BOOST_INTENSITY] ?: 50,
+            crossfeedEnabled = prefs[AppSettingsKeys.CROSSFEED_ENABLED] ?: false,
+            crossfeedIntensity = prefs[AppSettingsKeys.CROSSFEED_INTENSITY] ?: 30,
+
+            defaultLibraryChip = prefs.enumOrDefault(AppSettingsKeys.DEFAULT_LIBRARY_CHIP, DefaultLibraryChip.Playlists),
+            swipeSongToQueue = prefs[AppSettingsKeys.SWIPE_SONG_TO_QUEUE] ?: false,
+            enableHaptics = prefs[AppSettingsKeys.ENABLE_HAPTICS] ?: true,
+            swipeSongToRemoveFromPlaylist = prefs[AppSettingsKeys.SWIPE_SONG_TO_REMOVE_FROM_PLAYLIST] ?: false,
+            gridCellSize = prefs.enumOrDefault(AppSettingsKeys.GRID_CELL_SIZE, GridCellSize.Medium),
+            displayDensity = prefs.enumOrDefault(AppSettingsKeys.DISPLAY_DENSITY, DisplayDensity.Comfortable),
+            fontStyle = prefs.enumOrDefault(AppSettingsKeys.FONT_STYLE, AppFontStyle.System),
+            navigationStyle = prefs.enumOrDefault(AppSettingsKeys.NAVIGATION_STYLE, NavigationStyle.Haze),
+            navigationHoldAndSlide = prefs[AppSettingsKeys.NAVIGATION_HOLD_AND_SLIDE] ?: false,
+
+            showLikedPlaylist = prefs[AppSettingsKeys.SHOW_LIKED_PLAYLIST] ?: true,
+            showDownloadedPlaylist = prefs[AppSettingsKeys.SHOW_DOWNLOADED_PLAYLIST] ?: true,
+            showExportedPlaylist = prefs[AppSettingsKeys.SHOW_EXPORTED_PLAYLIST] ?: false,
+            showTopPlaylist = prefs[AppSettingsKeys.SHOW_TOP_PLAYLIST] ?: true,
+            showCachedPlaylist = prefs[AppSettingsKeys.SHOW_CACHED_PLAYLIST] ?: false,
+            showRecentlyPlayedShortcut = prefs[AppSettingsKeys.SHOW_RECENTLY_PLAYED_SHORTCUT] ?: true,
+
+            disableScreenshots = prefs[AppSettingsKeys.DISABLE_SCREENSHOTS] ?: false
+        )
+    }
+
+    suspend fun <T> setValue(key: Preferences.Key<T>, value: T) {
+        context.appSettingsDataStore.portableEdit { it[key] = value }
+    }
+
+    suspend fun <T : Enum<T>> setEnum(key: Preferences.Key<String>, value: T) {
+        context.appSettingsDataStore.portableEdit { it[key] = value.name }
+    }
+
+    suspend fun resetAppearance() {
+        context.appSettingsDataStore.portableEdit { prefs ->
+            prefs.remove(AppSettingsKeys.GRID_CELL_SIZE)
+            prefs.remove(AppSettingsKeys.DISPLAY_DENSITY)
+            prefs.remove(AppSettingsKeys.FONT_STYLE)
+            prefs.remove(AppSettingsKeys.NAVIGATION_STYLE)
+            prefs.remove(AppSettingsKeys.NAVIGATION_HOLD_AND_SLIDE)
+            prefs.remove(AppSettingsKeys.LIQUID_GLASS_ACCENTS)
+        }
+    }
+
+    suspend fun resetPlayer() {
+        context.appSettingsDataStore.portableEdit { prefs ->
+            listOf(
+                AppSettingsKeys.PLAYER_BACKGROUND_STYLE,
+                AppSettingsKeys.PLAYER_BUTTON_COLOR,
+                AppSettingsKeys.PLAYER_SLIDER_STYLE,
+                AppSettingsKeys.PLAYER_TRANSPORT_STYLE,
+                AppSettingsKeys.LIQUID_GLASS_TRANSPORT_LAYOUT,
+            ).forEach(prefs::remove)
+            prefs.remove(AppSettingsKeys.HIDE_PLAYER_THUMBNAIL)
+            prefs.remove(AppSettingsKeys.THUMBNAIL_CORNER_RADIUS)
+            prefs.remove(AppSettingsKeys.CROP_ALBUM_ART)
+            prefs.remove(AppSettingsKeys.SWIPE_TO_CHANGE_SONG_ENABLED)
+            prefs.remove(AppSettingsKeys.ROTATING_THUMBNAIL_ANIMATION)
+            prefs.remove(AppSettingsKeys.SHOW_CODEC_INFO)
+        }
+    }
+
+    suspend fun resetMiniPlayer() {
+        context.appSettingsDataStore.portableEdit { it.remove(AppSettingsKeys.MINI_PLAYER_BACKGROUND_STYLE) }
+    }
+}
+
+/**
+ * Single source of truth for the app's persisted UI and playback preferences. Scoped to the
+ * hosting Activity via `viewModel()` and backed by DataStore so choices survive relaunch.
+ */
+class AppSettingsViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = AppSettingsRepository(application)
+
+    val state: StateFlow<AppSettingsState> = repository.state.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = AppSettingsState()
+    )
+
+    // Mini-player
+    fun setMiniPlayerBackgroundStyle(value: BackgroundStyle) = setEnum(AppSettingsKeys.MINI_PLAYER_BACKGROUND_STYLE, value)
+
+    // Player
+    fun setPlayerBackgroundStyle(value: BackgroundStyle) = setEnum(AppSettingsKeys.PLAYER_BACKGROUND_STYLE, value)
+    fun setHidePlayerThumbnail(value: Boolean) = set(AppSettingsKeys.HIDE_PLAYER_THUMBNAIL, value)
+    fun setThumbnailCornerRadius(value: Int) = set(AppSettingsKeys.THUMBNAIL_CORNER_RADIUS, value)
+    fun setCropAlbumArt(value: Boolean) = set(AppSettingsKeys.CROP_ALBUM_ART, value)
+    fun setPlayerButtonColor(value: PlayerButtonColorOption) = setEnum(AppSettingsKeys.PLAYER_BUTTON_COLOR, value)
+    fun setPlayerSliderStyle(value: PlayerSliderStyle) = setEnum(AppSettingsKeys.PLAYER_SLIDER_STYLE, value)
+    fun setPlayerTransportStyle(value: PlayerTransportStyle) = setEnum(AppSettingsKeys.PLAYER_TRANSPORT_STYLE, value)
+    fun setLiquidGlassTransportLayout(value: LiquidGlassTransportLayout) = setEnum(AppSettingsKeys.LIQUID_GLASS_TRANSPORT_LAYOUT, value)
+    fun setLiquidGlassAccents(value: Boolean) = set(AppSettingsKeys.LIQUID_GLASS_ACCENTS, value)
+    fun setSwipeToChangeSong(value: Boolean) = set(AppSettingsKeys.SWIPE_TO_CHANGE_SONG_ENABLED, value)
+    fun setShowAnimatedCanvas(value: Boolean) = set(AppSettingsKeys.SHOW_ANIMATED_CANVAS, value)
+    fun setSkipSilence(value: Boolean) = set(AppSettingsKeys.SKIP_SILENCE, value)
+    fun setPersistentQueue(value: Boolean) = set(AppSettingsKeys.PERSISTENT_QUEUE, value)
+    fun setPreloadNextTrack(value: Boolean) = set(AppSettingsKeys.PRELOAD_NEXT_TRACK, value)
+    fun setAudioQualityMode(value: AudioQualityMode) = setEnum(AppSettingsKeys.AUDIO_QUALITY_MODE, value)
+    fun setAudioNormalizationEnabled(value: Boolean) = set(AppSettingsKeys.AUDIO_NORMALIZATION_ENABLED, value)
+    fun setCrossfadeEnabled(value: Boolean) = set(AppSettingsKeys.CROSSFADE_ENABLED, value)
+    fun setCrossfadeDurationMs(value: Int) = set(AppSettingsKeys.CROSSFADE_DURATION_MS, value)
+    fun setBassBoostEnabled(value: Boolean) = set(AppSettingsKeys.BASS_BOOST_ENABLED, value)
+    fun setBassBoostIntensity(value: Int) = set(AppSettingsKeys.BASS_BOOST_INTENSITY, value)
+    fun setCrossfeedEnabled(value: Boolean) = set(AppSettingsKeys.CROSSFEED_ENABLED, value)
+    fun setCrossfeedIntensity(value: Int) = set(AppSettingsKeys.CROSSFEED_INTENSITY, value)
+    fun setRotatingThumbnailAnimation(value: Boolean) = set(AppSettingsKeys.ROTATING_THUMBNAIL_ANIMATION, value)
+    fun setShowCommentButton(value: Boolean) = set(AppSettingsKeys.SHOW_COMMENT_BUTTON, value)
+    fun setShowCodecInfo(value: Boolean) = set(AppSettingsKeys.SHOW_CODEC_INFO, value)
+    fun setMiniPlayerSwipeSensitivity(value: Int) = set(AppSettingsKeys.MINI_PLAYER_SWIPE_SENSITIVITY, value)
+
+    // Lyrics
+    fun setLyricsProviderOrder(value: List<LyricsProviderId>) =
+        set(AppSettingsKeys.LYRICS_PROVIDER_ORDER, LyricsProviderId.serialize(value))
+    fun setLyricsTextPosition(value: LyricsTextPosition) = setEnum(AppSettingsKeys.LYRICS_TEXT_POSITION, value)
+    fun setWordAnimationStyle(value: WordAnimationStyle) = setEnum(AppSettingsKeys.WORD_ANIMATION_STYLE, value)
+    fun setGlowingLyricsEffect(value: Boolean) = set(AppSettingsKeys.GLOWING_LYRICS_EFFECT, value)
+    fun setBlurInactiveLines(value: Boolean) = set(AppSettingsKeys.BLUR_INACTIVE_LINES, value)
+    fun setLyricsTextSize(value: Int) = set(AppSettingsKeys.LYRICS_TEXT_SIZE, value)
+    fun setLyricsLineSpacing(value: Float) = set(AppSettingsKeys.LYRICS_LINE_SPACING, value)
+    fun setChangeLyricsOnClick(value: Boolean) = set(AppSettingsKeys.CHANGE_LYRICS_ON_CLICK, value)
+    fun setAutoScrollLyrics(value: Boolean) = set(AppSettingsKeys.AUTO_SCROLL_LYRICS, value)
+    fun setSwipeSongInFullscreenLyrics(value: Boolean) = set(AppSettingsKeys.SWIPE_SONG_IN_FULLSCREEN_LYRICS, value)
+    fun setShowPlayPauseOverlayOnThumbnail(value: Boolean) = set(AppSettingsKeys.SHOW_PLAY_PAUSE_OVERLAY_ON_THUMBNAIL, value)
+    fun setHideStatusBarInFullscreenLyrics(value: Boolean) = set(AppSettingsKeys.HIDE_STATUS_BAR_IN_FULLSCREEN_LYRICS, value)
+
+    // Misc
+    fun setDefaultOpenTab(value: DefaultTab) = setEnum(AppSettingsKeys.DEFAULT_OPEN_TAB, value)
+    fun setDefaultLibraryChip(value: DefaultLibraryChip) = setEnum(AppSettingsKeys.DEFAULT_LIBRARY_CHIP, value)
+    fun setSwipeSongToQueue(value: Boolean) = set(AppSettingsKeys.SWIPE_SONG_TO_QUEUE, value)
+    fun setEnableHaptics(value: Boolean) = set(AppSettingsKeys.ENABLE_HAPTICS, value)
+    fun setSwipeSongToRemoveFromPlaylist(value: Boolean) = set(AppSettingsKeys.SWIPE_SONG_TO_REMOVE_FROM_PLAYLIST, value)
+    fun setGridCellSize(value: GridCellSize) = setEnum(AppSettingsKeys.GRID_CELL_SIZE, value)
+    fun setDisplayDensity(value: DisplayDensity) = setEnum(AppSettingsKeys.DISPLAY_DENSITY, value)
+    fun setFontStyle(value: AppFontStyle) = setEnum(AppSettingsKeys.FONT_STYLE, value)
+    fun setNavigationStyle(value: NavigationStyle) = setEnum(AppSettingsKeys.NAVIGATION_STYLE, value)
+    fun setNavigationHoldAndSlide(value: Boolean) = set(AppSettingsKeys.NAVIGATION_HOLD_AND_SLIDE, value)
+
+    // Auto playlists
+    fun setShowLikedPlaylist(value: Boolean) = set(AppSettingsKeys.SHOW_LIKED_PLAYLIST, value)
+    fun setShowDownloadedPlaylist(value: Boolean) = set(AppSettingsKeys.SHOW_DOWNLOADED_PLAYLIST, value)
+    fun setShowExportedPlaylist(value: Boolean) = set(AppSettingsKeys.SHOW_EXPORTED_PLAYLIST, value)
+    fun setShowTopPlaylist(value: Boolean) = set(AppSettingsKeys.SHOW_TOP_PLAYLIST, value)
+    fun setShowCachedPlaylist(value: Boolean) = set(AppSettingsKeys.SHOW_CACHED_PLAYLIST, value)
+    fun setShowRecentlyPlayedShortcut(value: Boolean) = set(AppSettingsKeys.SHOW_RECENTLY_PLAYED_SHORTCUT, value)
+
+    // Privacy
+    fun setDisableScreenshots(value: Boolean) = set(AppSettingsKeys.DISABLE_SCREENSHOTS, value)
+
+    fun resetAppearance() = viewModelScope.launchSettingsWrite { repository.resetAppearance() }
+    fun resetPlayer() = viewModelScope.launchSettingsWrite { repository.resetPlayer() }
+    fun resetMiniPlayer() = viewModelScope.launchSettingsWrite { repository.resetMiniPlayer() }
+
+    private fun <T> set(key: Preferences.Key<T>, value: T) {
+        viewModelScope.launchSettingsWrite { repository.setValue(key, value) }
+    }
+
+    private fun <T : Enum<T>> setEnum(key: Preferences.Key<String>, value: T) {
+        viewModelScope.launchSettingsWrite { repository.setEnum(key, value) }
+    }
+}
