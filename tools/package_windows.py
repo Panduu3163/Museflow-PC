@@ -19,7 +19,7 @@ BINARIES = ("MuseFlow-PC.exe", "libmpv-2.dll", "resolver/yt-dlp.exe", "javascrip
 DOCUMENTS = ("README.txt", "LICENSE", "THIRD_PARTY_NOTICES.md", "CHANGELOG.md", "TRAY.md",
              "DESKTOP-FEATURES.md", "LOCAL-PLAYER.md", "ONLINE-PLAYER.md", "VALIDATION.md",
              "dependency-inventory.json", "mpv-provenance.json", "runtime-info.json",
-             "resolver-provenance.json", "SHA256SUMS.txt", "AUDIO-OUTPUT.md", "SIMPMUSIC-RESEARCH.md", "ARTWORK.md")
+             "resolver-provenance.json", "SHA256SUMS.txt", "AUDIO-OUTPUT.md", "SIMPMUSIC-RESEARCH.md", "ARTWORK.md", "USABILITY.md")
 
 
 def digest(stream) -> str:

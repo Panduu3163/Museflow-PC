@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.1 — Compact layout and keyboard preview · 15 November 2026
+
+- Give Settings the available scroll area so the audio-output selector is no longer cut off at the minimum window size.
+- Honor the preferred startup window size and use scale-aware dimensions for density checks.
+- Add visible volume text and keep desktop/tray status inside the same scrollable pane.
+- Add Ctrl+1–5 section navigation and Escape dismissal for side panels.
+- Make track rows focusable and activatable with Enter/Space, with visible focus outlines.
+- Name Play/View controls with the song and artist; label playlist fields and expose Shuffle state.
+- Elide long button text while retaining full accessible names.
+- Ignore held activation-key repeats and preserve shortcut focus across Like/model refreshes.
+- Add an opt-in, explicitly isolated native layout/keyboard journey.
+
+This remains a preview. Full screen-reader, real Windows-DPI, physical audio-device and clean-machine acceptance are pending. See [USABILITY.md](docs/USABILITY.md).
+
 ## 0.7.0 — Current-song artwork · 15 November 2026
 
 - Display real selected-song artwork in the bottom player and lyrics panel.

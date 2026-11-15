@@ -22,9 +22,18 @@ mod queue;
 mod resolver;
 mod tray;
 mod tray_checks;
+mod ui_checks;
 slint::include_modules!();
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<_> = std::env::args().collect();
+    let explicit_data_path = args
+        .iter()
+        .position(|s| s == "--data-dir")
+        .and_then(|index| args.get(index + 1))
+        .is_some_and(|path| !path.trim().is_empty() && !path.starts_with("--"));
+    if args.iter().any(|s| s == "--ui-smoke-test") && !explicit_data_path {
+        return Err("--ui-smoke-test requires an explicit isolated --data-dir".into());
+    }
     if args
         .get(1)
         .is_some_and(|a| a == "--artwork-create-fixtures")

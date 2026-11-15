@@ -50,11 +50,11 @@ The shell regression mode still uses 10,000 fictional tracks; normal launches st
 
 ## Online verification
 
-The helper also sets MUSEFLOW_YTDLP and MUSEFLOW_DENO to this PCâ€™s pinned G: installations. The standalone preview uses `resolver/yt-dlp.exe` and `javascript/deno.exe` adjacent to its executable. With an explicitly isolated test data directory, `--online-smoke-test <output>` exercises live search/resolution/seek with `--null-audio`. Further opt-in modes cover online-restore, online-page, online-cancel, online-switch (requires imported local fixtures) and online-no-runtime (requires a deliberately missing resolver override). They contact the provider; ordinary unit tests use loopback fixtures and no internet.
+The helper also sets MUSEFLOW_YTDLP and MUSEFLOW_DENO to this PC’s pinned G: installations. The standalone preview uses `resolver/yt-dlp.exe` and `javascript/deno.exe` adjacent to its executable. With an explicitly isolated test data directory, `--online-smoke-test <output>` exercises live search/resolution/seek with `--null-audio`. Further opt-in modes cover online-restore, online-page, online-cancel, online-switch (requires imported local fixtures) and online-no-runtime (requires a deliberately missing resolver override). They contact the provider; ordinary unit tests use loopback fixtures and no internet.
 
 ## Desktop verification
 
-Slintâ€™s raw-window-handle-06 feature exposes the HWND after the event loop starts. Souvlaki is initialized from that phase, on the UI thread, and is dropped before the window. Desktop native journeys use `--desktop-smoke-test`, `--lyrics-smoke-test` (requires generated matching LRC fixtures), `--media-journey-smoke-test` and `--stream-media-smoke-test`. The latter two are driven by an external fixture-scoped `--media-probe` process through Windowsâ€™ media-session API. `--lyrics-provider-probe <output>` saves only counts/status from a known public metadata query. All tests use isolated data and null output. No physical media-key/device test is implied.
+Slint’s raw-window-handle-06 feature exposes the HWND after the event loop starts. Souvlaki is initialized from that phase, on the UI thread, and is dropped before the window. Desktop native journeys use `--desktop-smoke-test`, `--lyrics-smoke-test` (requires generated matching LRC fixtures), `--media-journey-smoke-test` and `--stream-media-smoke-test`. The latter two are driven by an external fixture-scoped `--media-probe` process through Windows’ media-session API. `--lyrics-provider-probe <output>` saves only counts/status from a known public metadata query. All tests use isolated data and null output. No physical media-key/device test is implied.
 
 ## Tray and portable archive
 
@@ -63,3 +63,7 @@ Windows resources now embed file/product versions derived from Cargo.toml. `--tr
 ## Audio routing validation
 
 See AUDIO-OUTPUT.md for the opt-in routing/stress commands and native configuration probe. Use isolated G: libraries and generated fixtures. These check entry points do not open the normal library unless that path is explicitly supplied.
+
+## Compact layout and keyboard verification
+
+See [USABILITY.md](USABILITY.md) for the fixture-only `--ui-smoke-test` mode, shortcut coverage and renderer-density checks. It requires an explicit isolated `--data-dir` and changes that test library’s preferences. Renderer-density overrides do not certify Windows DPI or screen-reader support.

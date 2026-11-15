@@ -43,3 +43,7 @@ Per-app Windows output selection, saved-output fallback and explicit native buff
 ## 0.7.0 checkpoint
 
 Current-song cover art, lazy bounded decoding/caching and stale-result protection are implemented. Embedded/folder/online and cache-only restart checks accompany the playback/routing regressions. Full-list thumbnails, richer album/artist browsing and remaining platform acceptance are later work. See STATUS.md and ARTWORK.md.
+
+## 0.7.1 checkpoint
+
+Compact Settings, descriptive control names, focusable track rows and section shortcuts are implemented. Eight layout captures at each of three renderer densities accompany native keyboard, playback, artwork and tray regressions. Renderer scaling is not full Windows-DPI or screen-reader certification; platform/hardware acceptance remains incomplete. See STATUS.md and USABILITY.md.

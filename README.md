@@ -1,6 +1,6 @@
 # Museflow PC (ON-going project)
 
-**Work in progress · Preview 0.7.0 · Not a stable release**
+**Work in progress · Preview 0.7.1 · Not a stable release**
 
 A native **Rust + Slint** desktop music player for Windows, with Linux planned later. MuseFlow PC is a separate application built around MuseFlow’s music-player identity; the Android project is [Muse_Flow](https://github.com/Panduu3163/Muse_Flow).
 
@@ -13,13 +13,14 @@ A native **Rust + Slint** desktop music player for Windows, with Linux planned l
 - Persistent library and queue, seeking, volume, shuffle and repeat.
 - Likes, basic playlists, plain/timed lyrics and current-song cover artwork.
 - Windows media controls, tray behavior and saved audio-output selection.
+- Compact Settings, keyboard-focusable tracks and Ctrl+1–5 section navigation.
 - Background network/file/database work, virtualized lists and bounded artwork caches.
 
 Online sources are unofficial integrations and may stop working or reject individual recordings. MuseFlow does not host audio. Missing artwork and provider failures are handled separately from local playback.
 
 ## Project status
 
-The current milestone is the **0.7.0 artwork preview**. Formatting, Clippy, 37 Rust unit tests and the documented isolated native playback/artwork/routing journeys passed on the development PC. These results do not establish complete hardware compatibility or long-term stability.
+The current milestone is the **0.7.1 compact layout and keyboard preview**. Formatting, Clippy, 37 Rust unit tests and nine documented isolated native layout/playback/restore/artwork/tray journeys passed on the development PC. These results do not establish complete hardware compatibility or long-term stability.
 
 Still pending: physical audio-device changes, Bluetooth/headphones, Windows 10, clean-machine installation, complete accessibility/scaling checks, cold-start/GPU measurements, signing and the full native-runtime redistribution audit. See [validation and limitations](docs/STATUS.md) for evidence and measurement conditions.
 
@@ -44,6 +45,7 @@ See [BUILDING.md](docs/BUILDING.md) for prerequisites, build commands, runtime c
 
 - [Plan](docs/PLAN.md), [architecture](docs/ARCHITECTURE.md), [milestones](docs/MILESTONES.md)
 - [Local playback](docs/LOCAL-PLAYER.md), [online playback](docs/ONLINE-PLAYER.md), [artwork](docs/ARTWORK.md)
+- [Compact layout and keyboard controls](docs/USABILITY.md)
 - [Audio output](docs/AUDIO-OUTPUT.md), [desktop features](docs/DESKTOP-FEATURES.md), [tray/packaging](docs/TRAY.md)
 - [SimpMusic research](docs/SIMPMUSIC-RESEARCH.md), [performance targets](docs/PERFORMANCE.md)
 - [Changelog](CHANGELOG.md), [contribution guide](CONTRIBUTING.md)

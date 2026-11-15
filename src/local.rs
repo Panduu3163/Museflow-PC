@@ -305,7 +305,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     let runtime = runtime_path()?;
     let null_audio = std::env::args().any(|s| s == "--null-audio");
     let ui = AppWindow::new()?;
-    ui.window().set_size(slint::LogicalSize::new(1240.0, 820.0));
+    // The Slint preferred size honors the backend/window scale at creation.
     ui.set_demo(false);
     ui.set_selected_title("Your library starts here".into());
     ui.set_selected_artist("Add local music to begin".into());
@@ -620,6 +620,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     let _checks = crate::local_checks::install(&ui, state.clone())?;
     let _audio_checks = crate::audio_checks::install(&ui, state.clone())?;
     let _artwork_checks = crate::artwork_checks::install(&ui, state.clone())?;
+    let _ui_checks = crate::ui_checks::install(&ui)?;
     let lyrics = crate::lyrics_ui::Lyrics::new(&ui, state.clone());
     let artwork = crate::artwork_ui::Artwork::new(&ui, state.clone(), artwork_root);
     {

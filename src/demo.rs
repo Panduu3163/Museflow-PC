@@ -182,7 +182,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
     let ui = AppWindow::new()?;
-    ui.window().set_size(slint::LogicalSize::new(1240.0, 820.0));
+    // The Slint preferred size honors the backend/window scale at creation.
     let constructed_ms = started.elapsed().as_millis();
     if let Some(path) = ready_file {
         let mut recorded = false;

@@ -1,50 +1,39 @@
-# Current-song artwork checkpoint â€” 0.7.0 Â· 15 November 2026
+# Compact layout and keyboard checkpoint — 0.7.1 · 15 November 2026
 
-Run `G:\Essential Softwares\MuseFlow-PC\Preview\0.7.0-artwork\MuseFlow-PC.exe`.
+Run `G:\Essential Softwares\MuseFlow-PC\Preview\0.7.1-usability\MuseFlow-PC.exe`.
 
 ## Delivered
 
-The selected recording's cover appears in the bottom player and lyrics panel. Local front-cover pictures take precedence over other embedded pictures, then recognized folder JPEG/PNG files. Online thumbnails use the validated recording ID on a fixed YouTube image host. Restoring paused online artwork checks the cache without a fresh cover request. Missing/corrupt art keeps the existing note icon and does not stop audio. Full-list thumbnails and Windows media-control artwork remain later work.
+Settings now uses the available scrollable height; at the minimum 800 × 600 logical size, the audio-output selector is fully visible rather than being cut off. Its status/help content remains in that scroll area. Volume has a visible numeric label. Startup uses the declared preferred window size so the backend can apply its scale factor.
 
-File/tag reads, HTTP, image decoding/cropping, PNG encoding and cache maintenance stay on a single worker with one replaceable pending request. Generation/selected-ID checks keep late results out of the active UI. Finished pixel data is imported into Slint on the event loop. No new idle timer or helper process was added. The existing image 0.25.10 package is now a pinned direct dependency; no packages/toolchains/runtimes were downloaded or upgraded. SQLite remains schema 2.
+Ctrl+1–5 navigates sections and Escape dismisses a side panel after its child controls decline the event. Track rows accept Tab focus and Enter/Space activation, with visible outlines. Play/View names include the song and artist; playlist fields have explicit names, Shuffle reports its state, and long button text elides without shortening its accessible name. Held activation-key repeats are ignored. Like transfers focus to a stable scope before the row model refreshes. See [USABILITY.md](USABILITY.md).
 
-Inputs are bounded to 4 MiB, 4096 pixels per side and 4,194,304 total pixels before decoding. Decoder allocation limits are requested as an additional best-effort safeguard. Completed covers are 256Ã—256 RGBA; the memory cache holds 16 results, at most approximately 4 MiB retained pixels plus metadata. Recognized app-owned disk entries, including interrupted-write files, have a 64 MiB / 256-file write-time quota. Unrelated files/directories are not evicted. These are cache limits, not a whole-process RAM guarantee. See ARTWORK.md.
+No dependency upgrades, runtime installations or SQLite schema changes were required. The added native journey is opt-in and adds no running idle timer during ordinary use. Test data and binaries remain on G:, with source/evidence on E:; Android remains paused.
 
-## Verified
+## Verified on this Windows 11 PC
 
-- Formatting, Clippy with warnings denied and optimized build passed. **37 Rust tests passed**; two ignored entry points are child-process fixtures used by the tested resolver teardown.
-- Decoder/cache tests passed malformed/oversize images, excessive dimensions, JPEG/PNG decoding, local-source invalidation, persistent folder art, bounded negative results, scoped quota/count eviction and interrupted-write accounting. HTTP fixtures passed errors, declared oversize rejection and in-flight cancellation.
-- **Four final packaged artwork journeys passed:** embedded front-cover priority over back/folder art, folder fallback, corrupt/missing art and thirty rapid selections; paused local disk-cache restore; exact online cover alongside playback; paused online cache restore without initializing audio or resolving a stream. Generated fixture paths include Bengali characters. Unit colour checks and native pixel checks verify the cover matches the selected fixture.
-- **Four audio regressions passed:** concrete/default route changes with pause preservation, stale selection rejection while playing and Next; saved routing restore; absent saved output falling back without losing its preference; and 120 decoded selections with correct identity/time progression.
-- **Seven playback regressions passed:** Hum, Hum Nahin and Tum with Opus and 60% seek/resume/stable pause, live search playback, local controls/EOF/library behavior, cancellation and online-to-local interruption.
-- Native screenshots were inspected for the bottom-player image, readable compact artwork in the lyrics panel, correct source image and fallback behavior. This does not replace physical hearing, complete keyboard/screen-reader or scaling acceptance.
-- All 252 copied reference files and their Android originals still match their preparation hashes. Redacted source secret scanning passed with the existing narrow public InnerTube constant exception.
-- Portable candidate: **Unicode/space-path extraction, content hashes, bundled runtime, relative data and live playback passed**.
+- Formatting, **37 Rust tests** and Clippy with all-targets/warnings denied passed; two ignored entry points remain child-process fixtures. The optimized build passed.
+- **Three native layout/keyboard journeys passed**, each with eight captures, at 100%, 150% and 200% renderer density. Minimum captures are respectively 800×600, 1200×900 and 1600×1200 physical pixels. Assertions check the requested scale-aware dimensions. Dark/light Settings, Home, Library, Queue and Lyrics layouts were sampled visually.
+- Native key events verify Ctrl+1–5, rejection of Ctrl+Shift+number as a section shortcut, Escape, Return activation and ignored held-key repeats. The test rejects absent, missing, blank and flag-like data-directory arguments before opening a library; all four guard cases passed.
+- **Six further native regressions passed:** synthetic 10,000-track shell/filter/stable-ID journey, local playback/seek/EOF/likes/playlists, paused restart, artwork/rapid selections, live online search/stream/seek and hidden-player tray Exit.
+- Manual native-window interaction confirmed Enter-to-play and Space-to-like in the candidate, then confirmed the final build keeps Ctrl+5 working after Like replaces the row model. The named controls are present in the accessibility tree. This does not certify screen-reader focus announcements.
+- The portable ZIP passed content hashes/CRC, Unicode-path extraction, bundled-runtime artwork playback, hidden-player tray Exit and adjacent-data creation checks. No library/cache data was present in the archive.
+- All **252 copied references** still match their preparation hashes. Redacted source secret scanning passed with the existing exact public InnerTube constant exception.
 
-## Measurements on this PC
+All native audio regressions use null output or silent generated fixtures; they do not establish acoustic quality. Early cropped density captures and a tray attempt missing its required imported fixtures are diagnostic history, not accepted passes. The corrected final results and dimension assertions determine the findings above.
 
-Windows 11 Pro 10.0.26300, Ryzen 5 7500F / RTX 4070, optimized packaged build. Three warm cached empty-library runs; usable frame requires library ready plus AfterRendering, external polling at 10 ms and idle sampled after three seconds. Online process-tree sampling is 50 ms; local 120-selection sampling is 100 ms. Generated/default Windows tests are muted; the short measured online journey uses null output. These results are not acoustic acceptance.
+## Remaining acceptance
 
-| Measurement | Observed |
-| --- | --- |
-| Median warm first frame | 255.94 ms |
-| Median idle working set | 96.38 MiB |
-| 120-selection local journey | 90.11 s |
-| Local journey main-process peak working set | 132.55 MiB |
-| Local journey final sampled working set | 127.90 MiB |
-| Short online sampled total process-tree peak | 498.28 MiB |
-| Tracked resolver helpers remaining afterward | 0 |
+Physical unplug/replug, Bluetooth/headphones, a second independent output device, full screen-reader/keyboard-list coverage, actual Windows DPI and multi-monitor transitions, Windows 10, clean-machine delivery, actual notification-area mouse/Explorer restart and the complete native-runtime redistribution audit remain pending. The accessibility automation focused-element report did not reliably follow custom-control focus; narrated focus needs separate validation. The earlier first-capture/occlusion observation is not marked fixed.
 
-Resolver RAM remains substantial and is included. Separate journeys and individual process peaks must not be added as simultaneous totals. Sampling can miss shorter peaks. Cold startup, GPU memory, frame timing, many hours of listening and diverse real-library cover memory remain unmeasured; do not infer leak freedom from this short stress run.
+Renderer-density overrides are not OS-DPI certification. Long-session memory, GPU cost and cold startup were not measured again for this patch. Earlier performance numbers and artwork acceptance remain historical in [ARTWORK-CHECKPOINT.md](ARTWORK-CHECKPOINT.md). No stable/bug-free release claim is made.
 
-## Remaining limits and workspace
+## Evidence and preview
 
-Unplug/replug, Bluetooth/headphones, routing to a second independent physical device, complete compact/scaling/accessibility, actual tray-menu mouse/Explorer restart, Windows 10, clean-machine delivery, signing and the complete native/runtime license/source-fulfillment audit remain pending. The earlier first-capture/occlusion observation is not marked fixed. Online provider restrictions can still prevent individual recordings or thumbnails; these failures are handled independently. Artwork edits during the same active selection are not watched automatically.
+Evidence: `E:\ALL Project & Idea Workspace\WSL BACKUP\artifacts\museflow-pc-usability-2026-11-15`. The `*-guard.log` compiler/test logs, `accepted-*` native captures, `accepted-results.json` and `final-manual-focus.json` describe this candidate. Preliminary files preserve diagnostic attempts.
 
-The normal preview retains the existing G: library. Each portable copy uses adjacent data/, and archive inputs exclude all user data/cache files. Tests use separate G: folders. Source/evidence remain on E:, dependencies/build/cache/output on G:. Android development remains paused. This source snapshot is being published as an ongoing preview, with binaries and local test data excluded. The verification described above predates repository publication; prior checkpoints preserve their original scope.
+EXE SHA-256: `3398479110aa8d52971fee7f9860cd0afd5e5b57d1b7b0ef4bf7dcea4759e8c6`.
 
-## Evidence
+The local preview retains the existing G: library; portable copies use adjacent `data/`. Runtime binaries, libraries, caches and local evidence are excluded from the source repository. The portable archive remains an unsigned local preview, not a certified installer or public binary release.
 
-`E:\ALL Project & Idea Workspace\WSL BACKUP\artifacts\museflow-pc-artwork-2026-11-15` contains the pre-change backup, tests/build logs, generated cover fixtures/checks, final native/playback/audio results, inspected snapshots, memory samples and archive validation. Final result JSONs determine the reported passes. Debug and earlier candidate observations are diagnostic history.
-
-EXE SHA-256: `d9dfae294e8e8f1e60e848925cc72eaa282ea0a9fd1e2cc83c7a25af2579d446`. The ZIP has its own checksum.
+Portable ZIP SHA-256: `1cd8ae95d9d4cbfd11da27c3c8428fa84f850211636e8ed7bdd35c2f7818908f`. Its native executable matches the tested staging binary.

@@ -45,13 +45,17 @@ component Action inherits Rectangle {
     focus := FocusScope {
         enabled: root.enabled;
         key-pressed(event) => {
-            if event.text == " " || event.text == "\n" { root.activated(); return accept; }
+            if !event.modifiers.control && !event.modifiers.alt && !event.modifiers.meta && (event.text == " " || event.text == Key.Return) {
+                if !event.repeat && root.enabled { root.activated(); }
+                return accept;
+            }
             return reject;
         }
     }
     Text {
         visible: !root.show-icon;
         text: root.text;
+        overflow: elide;
         color: root.selected ? Theme.accent : (root.quiet ? Theme.muted : Theme.ink);
         font-size: 14px;
         font-weight: root.selected ? 600 : 400;
@@ -158,6 +162,7 @@ export component AppWindow inherits Window {
     max-width: 100000px;
     max-height: 100000px;
     background: Theme.base;
+    forward-focus: shortcuts;
     default-font-family: "Segoe UI";
     default-font-size: 14px;
     in-out property <bool> dark <=> Theme.dark;
@@ -260,9 +265,29 @@ export component AppWindow inherits Window {
     callback collection-chosen(int);
     callback play-queued(int);
 
+    changed panel-open => { if !root.panel-open { shortcuts.focus(); } }
     init => { Palette.color-scheme = root.dark ? ColorScheme.dark : ColorScheme.light; }
     changed dark => { Palette.color-scheme = root.dark ? ColorScheme.dark : ColorScheme.light; if !root.demo && root.library-ready {root.theme-changed(root.dark);} }
     Timer { interval: 120ms; running: root.seek-pending; triggered => {root.seek(root.seek-preview); root.seek-pending = false;} }
+    shortcuts := FocusScope {
+        width: root.width; height: root.height;
+        key-pressed(event) => {
+            if event.text == Key.Escape && root.panel-open {
+                root.panel-open = false;
+                return accept;
+            }
+            return reject;
+        }
+        capture-key-pressed(event) => {
+            if event.modifiers.control && !event.modifiers.alt && !event.modifiers.shift && !event.modifiers.meta {
+                if event.text == "1" { if !event.repeat { shortcuts.focus(); root.navigate(0); } return accept; }
+                if event.text == "2" { if !event.repeat { shortcuts.focus(); root.navigate(1); } return accept; }
+                if event.text == "3" { if !event.repeat { shortcuts.focus(); root.navigate(2); } return accept; }
+                if event.text == "4" { if !event.repeat { shortcuts.focus(); root.navigate(3); } return accept; }
+                if event.text == "5" { if !event.repeat { shortcuts.focus(); root.navigate(4); } return accept; }
+            }
+            return reject;
+        }
     VerticalLayout {
         width: root.width;
         height: root.height;
@@ -294,7 +319,7 @@ export component AppWindow inherits Window {
                     Text { text: "A place for your music.\nA little room to get lost."; color: Theme.muted; font-size: 12px; wrap: word-wrap; }
                     Rectangle { vertical-stretch: 1; }
                     Action { text: "Settings"; selected: root.page == 4; activated => { root.navigate(4); } }
-                    Text { text: "PC PREVIEW  ·  0.7.0"; color: Theme.muted; font-size: 10px; height: 26px; }
+                    Text { text: "PC PREVIEW  ·  0.7.1"; color: Theme.muted; font-size: 10px; height: 26px; }
                 }
             }
             Rectangle {
@@ -337,12 +362,14 @@ export component AppWindow inherits Window {
                                         Text { text: "Find your flow."; color: #ffffff; font-size: root.compact ? 29px : 38px; font-weight: 700; }
                                         Text { text: "Less noise. More music."; color: #d0c4de; font-size: 14px; }
                                         Rectangle { vertical-stretch: 1; }
-                                        Action { text: "Explore the library"; width: 160px; height: 36px; selected: true; activated => { root.navigate(2); } }
+                                        Action { text: "Explore the library"; width: 160px; height: 36px; selected: true; activated => { shortcuts.focus(); root.navigate(2); } }
                                     }
                                 }
                                 if root.page == 4 : ScrollView {
-                                    min-height: 150px; preferred-height: root.demo ? 150px : 370px;
-                                    max-height: root.demo ? 150px : 370px;
+                                    min-height: 0px;
+                                    vertical-stretch: 1;
+                                    accessible-role: groupbox;
+                                    accessible-label: "MuseFlow settings";
                                     VerticalLayout {
                                         padding: 20px; spacing: 12px;
                                         Text { text: "Appearance"; color: Theme.ink; font-size: 18px; font-weight: 600; }
@@ -352,6 +379,7 @@ export component AppWindow inherits Window {
                                             Action {text: "Hide to tray"; enabled: root.tray-ready; activated => {root.tray-action("hide");}}
                                             Action {text: "Exit MuseFlow"; activated => {root.tray-action("exit");}}
                                         }
+                                        if !root.demo : Text {text: "Volume · " + round(root.volume) + "%"; color: Theme.ink; font-size: 16px; font-weight: 600;}
                                         if !root.demo : Slider { minimum: 0; maximum: 100; value: root.volume; accessible-label: "Volume"; changed(v) => {root.change-volume(v);} }
                                         if !root.demo : Text {text: "Audio output"; color: Theme.ink; font-size: 16px; font-weight: 600;}
                                         if !root.demo : HorizontalLayout {
@@ -363,6 +391,9 @@ export component AppWindow inherits Window {
                                         if !root.demo : Text {text: root.audio-output-status; color: Theme.muted; wrap: word-wrap; font-size: 12px;}
                                         Text { text: root.demo ? "Preview choices last for this session.\nSample metadata only." : "Library data: " + root.data-location + "\nTheme, volume, likes, playlists and the paused queue are saved.\nOpen Lyrics for a local sidecar or an on-demand LRCLIB lookup.";
                                             color: Theme.muted; wrap: word-wrap; font-size: 12px; }
+                                        Text {text: root.desktop-status; color: Theme.muted; wrap: word-wrap; font-size: 12px;}
+                                        if !root.demo : Text {text: root.tray-status; color: Theme.muted; wrap: word-wrap; font-size: 12px;}
+                                        Text {text: "Keyboard: Ctrl+1–5 changes sections. Enter/Space activates a focused button or track. Escape closes the side panel."; color: Theme.muted; wrap: word-wrap; font-size: 12px;}
                                     }
                                 }
                                 if !root.demo && root.page == 1 : HorizontalLayout {
@@ -383,8 +414,8 @@ export component AppWindow inherits Window {
                                 if root.online-active && root.online-message != "" : Text { text: root.online-message; color: Theme.muted; wrap: word-wrap; font-size: 12px; }
                                 if !root.demo && root.page == 2 : HorizontalLayout {
                                     height: 40px; spacing: 8px;
-                                    ComboBox { model: root.playlist-names; current-index <=> root.collection-index; width: 150px; selected => {root.collection-chosen(self.current-index);} }
-                                    LineEdit { text <=> root.playlist-name; placeholder-text: "New playlist"; }
+                                    ComboBox { accessible-label: "Library collection"; model: root.playlist-names; current-index <=> root.collection-index; width: 150px; selected => {root.collection-chosen(self.current-index);} }
+                                    LineEdit { accessible-label: "New playlist name"; text <=> root.playlist-name; placeholder-text: "New playlist"; }
                                     Action { text: "Create"; width: 60px; enabled: root.playlist-name != ""; activated => {root.create-playlist(root.playlist-name);root.playlist-name="";} }
                                     Action { text: "+ Track"; label: "Add current track to chosen playlist"; width: 72px; enabled: root.collection-index > 0 && root.selected-id >= 0; activated => {root.add-selected();} }
                                 }
@@ -400,10 +431,22 @@ export component AppWindow inherits Window {
                                     for track in root.tracks : Rectangle {
                                         height: 66px; border-radius: 8px;
                                         background: root.selected-id == track.id ? Theme.hover : row-touch.has-hover ? Theme.surface : transparent;
-                                        accessible-role: groupbox;
-                                        accessible-label: track.title + ", " + track.artist;
+                                        border-width: row-focus.has-focus ? 2px : 0px;
+                                        border-color: Theme.accent;
+                                        accessible-role: button;
+                                        accessible-label: (root.demo ? "View " : "Play ") + track.title + ", " + track.artist;
                                         accessible-action-default => { root.select-track(track.id); }
-                                        row-touch := TouchArea { clicked => { root.select-track(track.id); } }
+                                        forward-focus: row-focus;
+                                        row-focus := FocusScope {
+                                            key-pressed(event) => {
+                                                if !event.modifiers.control && !event.modifiers.alt && !event.modifiers.meta && (event.text == Key.Return || event.text == " ") {
+                                                    if !event.repeat { root.select-track(track.id); }
+                                                    return accept;
+                                                }
+                                                return reject;
+                                            }
+                                        }
+                                        row-touch := TouchArea { clicked => { row-focus.focus(); root.select-track(track.id); } }
                                         HorizontalLayout {
                                             padding: 8px; spacing: 14px;
                                             Cover { variant: track.cover; width: 46px; height: 46px; }
@@ -415,8 +458,8 @@ export component AppWindow inherits Window {
                                             if root.side-by-side : Text { text: track.album; width: 140px; color: Theme.muted; vertical-alignment: center; font-size: 12px; overflow: elide; }
                                             Text { text: track.duration; width: 38px; color: Theme.muted; vertical-alignment: center; font-size: 12px; }
                                             Action { text: root.online-active ? "+" : track.liked ? "♥" : "♡"; label: (root.online-active ? "Save to library: " : track.liked ? "Unlike " : "Like ") + track.title;
-                                                width: 38px; selected: track.liked; activated => { root.toggle-like(track.id); } }
-                                            Action { text: root.demo ? "View" : "Play"; width: 46px; quiet: true; activated => { root.select-track(track.id); } }
+                                                width: 38px; selected: track.liked; activated => { shortcuts.focus(); root.toggle-like(track.id); } }
+                                            Action { text: root.demo ? "View" : "Play"; label: (root.demo ? "View " : "Play ") + track.title + ", " + track.artist; width: 46px; quiet: true; activated => { root.select-track(track.id); } }
                                         }
                                     }
                                 }
@@ -427,9 +470,6 @@ export component AppWindow inherits Window {
                                     Text { text: root.online-active && root.query == "" ? "Enter a song or artist and choose Search." : !root.demo && root.query == "" ? "Add music files, choose a collection, or like a track." : "Try another title, artist or album."; color: Theme.muted; horizontal-alignment: center; }
                                     Rectangle { vertical-stretch: 1; }
                                 }
-                                if root.page == 4 : Text {text: root.desktop-status; color: Theme.muted; wrap: word-wrap;}
-                                if root.page == 4 && !root.demo : Text {text: root.tray-status; color: Theme.muted; wrap: word-wrap;}
-                                if root.page == 4 : Rectangle { vertical-stretch: 1; }
                             }
                         }
                         if root.panel-open && root.side-by-side && (root.demo || root.lyrics-panel) : DetailsPanel {
@@ -464,7 +504,7 @@ export component AppWindow inherits Window {
                 VerticalLayout {
                     width: root.compact ? 240px : 340px; spacing: 8px;
                     HorizontalLayout { alignment: center; spacing: 8px;
-                        Action { text: "⇄"; label: "Shuffle"; show-icon: true; icon: @image-url("../assets/icons/shuffle.svg"); selected: root.shuffle-enabled; enabled: !root.demo && root.selected-id >= 0; width: 38px; activated => {root.toggle-shuffle();} }
+                        Action { text: "⇄"; label: root.shuffle-enabled ? "Shuffle on" : "Shuffle off"; show-icon: true; icon: @image-url("../assets/icons/shuffle.svg"); selected: root.shuffle-enabled; enabled: !root.demo && root.selected-id >= 0; width: 38px; activated => {root.toggle-shuffle();} }
                         Action { text: "‹"; label: "Previous track"; show-icon: true; icon: @image-url("../assets/icons/previous.svg"); enabled: !root.demo && root.has-previous; width: 38px; activated => {root.previous-track();} }
                         Action { text: root.playing ? "Ⅱ" : "▷"; label: root.demo ? "Play unavailable in preview" : root.playing ? "Pause" : "Play";
                             show-icon: true; icon: root.playing ? @image-url("../assets/icons/pause.svg") : @image-url("../assets/icons/play.svg"); enabled: !root.demo && root.selected-id >= 0; selected: true; width: 42px; activated => {root.toggle-play();} }
@@ -506,4 +546,5 @@ export component AppWindow inherits Window {
         tracks: root.queue-tracks; current-id: root.selected-id;
         closed => {root.panel-open=false;} chosen(id) => {root.play-queued(id);}
     }
+}
 }
