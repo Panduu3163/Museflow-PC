@@ -233,10 +233,14 @@ export component AppWindow inherits Window {
     in-out property <bool> panel-open: false;
     in-out property <bool> lyrics-panel: false;
     private property <bool> compact: false;
+    private property <bool> short-window: false;
+    changed height => { root.short-window = self.height < 700px; }
     private property <bool> side-by-side: true;
     out property <Point> library-button-origin: library-button.absolute-position;
     changed width => { root.compact = self.width < 1000px; root.side-by-side = self.width >= 1100px; }
     in property <[TrackRow]> tracks;
+    out property <int> list-cursor-id: -1;
+    changed tracks => { root.list-cursor-id = -1; }
     in property <bool> searching: false;
     in property <string> result-label: "Your listening space";
     in property <int> selected-id: -1;
@@ -319,7 +323,7 @@ export component AppWindow inherits Window {
                     Text { text: "A place for your music.\nA little room to get lost."; color: Theme.muted; font-size: 12px; wrap: word-wrap; }
                     Rectangle { vertical-stretch: 1; }
                     Action { text: "Settings"; selected: root.page == 4; activated => { root.navigate(4); } }
-                    Text { text: "PC PREVIEW  ·  0.7.1"; color: Theme.muted; font-size: 10px; height: 26px; }
+                    Text { text: "PC PREVIEW  ·  0.7.2"; color: Theme.muted; font-size: 10px; height: 26px; }
                 }
             }
             Rectangle {
@@ -352,15 +356,15 @@ export component AppWindow inherits Window {
                             VerticalLayout {
                                 padding: 28px; spacing: 16px;
                                 if root.page == 0 : Rectangle {
-                                    height: 190px; border-radius: 16px; clip: true;
+                                    height: root.short-window ? 140px : 190px; border-radius: 16px; clip: true;
                                     background: @linear-gradient(120deg, #29203e 0%, #3b2854 55%, #324855 100%);
                                     Image { x: parent.width - 210px; width: 230px; height: 230px; y: -20px;
                                         source: @image-url("../assets/demo/hero.svg"); opacity: 0.8; }
                                     VerticalLayout {
-                                        padding: 24px; spacing: 10px;
-                                        Text { text: "A SOUNDTRACK FOR EVERY MOMENT"; color: #d8c8ef; font-size: 10px; letter-spacing: 1px; }
-                                        Text { text: "Find your flow."; color: #ffffff; font-size: root.compact ? 29px : 38px; font-weight: 700; }
-                                        Text { text: "Less noise. More music."; color: #d0c4de; font-size: 14px; }
+                                        padding: root.short-window ? 20px : 24px; spacing: 10px;
+                                        if !root.short-window : Text { text: "A SOUNDTRACK FOR EVERY MOMENT"; color: #d8c8ef; font-size: 10px; letter-spacing: 1px; }
+                                        Text { text: "Find your flow."; color: #ffffff; font-size: root.compact || root.short-window ? 29px : 38px; font-weight: 700; }
+                                        if !root.short-window : Text { text: "Less noise. More music."; color: #d0c4de; font-size: 14px; }
                                         Rectangle { vertical-stretch: 1; }
                                         Action { text: "Explore the library"; width: 160px; height: 36px; selected: true; activated => { shortcuts.focus(); root.navigate(2); } }
                                     }
@@ -426,10 +430,61 @@ export component AppWindow inherits Window {
                                     Rectangle { horizontal-stretch: 1; }
                                     Text { text: root.demo ? "SAMPLE COLLECTION" : root.online-active ? "YOUTUBE MUSIC" : "YOUR COLLECTION"; color: Theme.muted; font-size: 9px; vertical-alignment: center; }
                                 }
-                                if root.page != 4 && root.tracks.length > 0 : ListView {
+                                if root.page != 4 && root.tracks.length > 0 : list-keys := FocusScope {
                                     horizontal-stretch: 1; vertical-stretch: 1;
-                                    for track in root.tracks : Rectangle {
-                                        height: 66px; border-radius: 8px;
+                                    focus-on-click: false;
+                                    focus-on-tab-navigation: false;
+                                    private property <int> cursor-index: -1;
+                                    private property <int> focus-generation: 0;
+                                    private property <bool> focus-pending: false;
+                                    private property <bool> settle-pending: false;
+                                    private property <length> row-height: 66px;
+                                    Timer {
+                                        interval: 1ms; running: list-keys.settle-pending;
+                                        triggered => { list-keys.settle-pending = false; list-keys.ensure-cursor-visible(); }
+                                    }
+                                    private property <[TrackRow]> rows: root.tracks;
+                                    changed rows => {
+                                        self.cursor-index = -1;
+                                        self.focus-pending = false;
+                                        self.settle-pending = false;
+                                        root.list-cursor-id = -1;
+                                    }
+                                    function ensure-cursor-visible() {
+                                        if self.cursor-index < 0 || self.cursor-index >= self.rows.length { return; }
+                                        let top = self.cursor-index * self.row-height;
+                                        let bottom = top + self.row-height;
+                                        let offset = -track-list.content-y;
+                                        if top < offset { track-list.content-y = -top; }
+                                        if bottom > offset + track-list.visible-height {
+                                            track-list.content-y = -max(0px, bottom - track-list.visible-height);
+                                        }
+                                    }
+                                    function move-cursor(index: int) {
+                                        if self.rows.length == 0 { return; }
+                                        // Keep focus stable while the target row is materialized.
+                                        self.focus();
+                                        self.cursor-index = min(self.rows.length - 1, max(0, index));
+                                        self.focus-pending = true;
+                                        self.ensure-cursor-visible();
+                                        self.focus-generation += 1;
+                                    }
+                                    capture-key-pressed(event) => {
+                                        if event.modifiers.control || event.modifiers.alt || event.modifiers.meta || event.modifiers.shift { return reject; }
+                                        let current = max(0, self.cursor-index);
+                                        let page-size = max(1, floor(track-list.visible-height / self.row-height));
+                                        if event.text == Key.DownArrow { self.move-cursor(current + 1); return accept; }
+                                        if event.text == Key.UpArrow { self.move-cursor(current - 1); return accept; }
+                                        if event.text == Key.Home { self.move-cursor(0); return accept; }
+                                        if event.text == Key.End { self.move-cursor(self.rows.length - 1); return accept; }
+                                        if event.text == Key.PageDown { self.move-cursor(current + page-size); return accept; }
+                                        if event.text == Key.PageUp { self.move-cursor(current - page-size); return accept; }
+                                        return reject;
+                                    }
+                                    track-list := ListView {
+                                    width: parent.width; height: parent.height;
+                                    for track[index] in root.tracks : Rectangle {
+                                        height: list-keys.row-height; border-radius: 8px;
                                         background: root.selected-id == track.id ? Theme.hover : row-touch.has-hover ? Theme.surface : transparent;
                                         border-width: row-focus.has-focus ? 2px : 0px;
                                         border-color: Theme.accent;
@@ -437,7 +492,24 @@ export component AppWindow inherits Window {
                                         accessible-label: (root.demo ? "View " : "Play ") + track.title + ", " + track.artist;
                                         accessible-action-default => { root.select-track(track.id); }
                                         forward-focus: row-focus;
+                                        private property <int> focus-generation: list-keys.focus-generation;
+                                        changed focus-generation => {
+                                            if list-keys.focus-pending && list-keys.cursor-index == index { row-focus.focus(); }
+                                        }
+                                        init => {
+                                            if list-keys.focus-pending && list-keys.cursor-index == index { row-focus.focus(); }
+                                        }
                                         row-focus := FocusScope {
+                                            width: parent.width; height: parent.height;
+                                            focus-on-click: false;
+                                            focus-gained => {
+                                                list-keys.cursor-index = index;
+                                                list-keys.focus-pending = false;
+                                                root.list-cursor-id = track.id;
+                                                // Focus during repeater construction can adjust scroll
+                                                // using an unlaid-out row. Correct once on the next turn.
+                                                list-keys.settle-pending = true;
+                                            }
                                             key-pressed(event) => {
                                                 if !event.modifiers.control && !event.modifiers.alt && !event.modifiers.meta && (event.text == Key.Return || event.text == " ") {
                                                     if !event.repeat { root.select-track(track.id); }
@@ -462,6 +534,7 @@ export component AppWindow inherits Window {
                                             Action { text: root.demo ? "View" : "Play"; label: (root.demo ? "View " : "Play ") + track.title + ", " + track.artist; width: 46px; quiet: true; activated => { root.select-track(track.id); } }
                                         }
                                     }
+                                }
                                 }
                                 if root.online-active && root.online-more : Action {text: "Load more songs"; height: 36px; enabled: !root.searching; activated => {root.online-submit(true);}}
                                 if root.page != 4 && root.tracks.length == 0 : VerticalLayout {

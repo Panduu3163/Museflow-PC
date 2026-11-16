@@ -47,3 +47,7 @@ Current-song cover art, lazy bounded decoding/caching and stale-result protectio
 ## 0.7.1 checkpoint
 
 Compact Settings, descriptive control names, focusable track rows and section shortcuts are implemented. Eight layout captures at each of three renderer densities accompany native keyboard, playback, artwork and tray regressions. Renderer scaling is not full Windows-DPI or screen-reader certification; platform/hardware acceptance remains incomplete. See STATUS.md and USABILITY.md.
+
+## 0.7.2 checkpoint
+
+Large-library keyboard cursor navigation, whole-row scrolling and short-Home layout are implemented, with 13 accepted native journeys and 37 unit tests. The current PC checkpoint is ready for handoff; unresolved platform/hardware/release acceptance remains explicit in STATUS.md. Android development remains separate.

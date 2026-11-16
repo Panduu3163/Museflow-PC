@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.2 — Library keyboard navigation preview · 16 November 2026
+
+- Navigate virtualized libraries with Up/Down, Home/End and Page Up/Down.
+- Keep cursor movement separate from playback; activate the focused recording with Enter/Space.
+- Scroll the complete focused row into view, including distant and filtered results.
+- Coalesce focus/scroll correction after row materialization without an idle timer.
+- Fit Home’s hero to short windows so its focused song rows remain visible.
+- Add a synthetic 10,000-record keyboard journey and rendered focus-border checks.
+
+Still an ongoing preview; physical audio, Windows 10, clean-machine delivery, full screen-reader and actual OS-DPI acceptance remain pending.
+
 ## 0.7.1 — Compact layout and keyboard preview · 15 November 2026
 
 - Give Settings the available scroll area so the audio-output selector is no longer cut off at the minimum window size.

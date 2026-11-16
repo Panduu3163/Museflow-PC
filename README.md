@@ -1,6 +1,6 @@
 # Museflow PC (ON-going project)
 
-**Work in progress · Preview 0.7.1 · Not a stable release**
+**Work in progress · Preview 0.7.2 · Not a stable release**
 
 A native **Rust + Slint** desktop music player for Windows, with Linux planned later. MuseFlow PC is a separate application built around MuseFlow’s music-player identity; the Android project is [Muse_Flow](https://github.com/Panduu3163/Muse_Flow).
 
@@ -14,13 +14,14 @@ A native **Rust + Slint** desktop music player for Windows, with Linux planned l
 - Likes, basic playlists, plain/timed lyrics and current-song cover artwork.
 - Windows media controls, tray behavior and saved audio-output selection.
 - Compact Settings, keyboard-focusable tracks and Ctrl+1–5 section navigation.
+- Up/Down, Home/End and Page Up/Down through large libraries, with explicit Enter/Space activation.
 - Background network/file/database work, virtualized lists and bounded artwork caches.
 
 Online sources are unofficial integrations and may stop working or reject individual recordings. MuseFlow does not host audio. Missing artwork and provider failures are handled separately from local playback.
 
 ## Project status
 
-The current milestone is the **0.7.1 compact layout and keyboard preview**. Formatting, Clippy, 37 Rust unit tests and nine documented isolated native layout/playback/restore/artwork/tray journeys passed on the development PC. These results do not establish complete hardware compatibility or long-term stability.
+The current milestone is the **0.7.2 library keyboard navigation preview**. Formatting, Clippy, 37 Rust unit tests and 13 documented isolated native keyboard/layout/playback/restore/artwork/tray journeys passed on the development PC. These results do not establish complete hardware compatibility or long-term stability.
 
 Still pending: physical audio-device changes, Bluetooth/headphones, Windows 10, clean-machine installation, complete accessibility/scaling checks, cold-start/GPU measurements, signing and the full native-runtime redistribution audit. See [validation and limitations](docs/STATUS.md) for evidence and measurement conditions.
 

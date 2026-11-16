@@ -251,6 +251,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         });
     }
     worker.refresh(&ui, &likes.borrow());
+    let _list_checks = crate::list_checks::install(&ui)?;
     let smoke_timer = slint::Timer::default();
     let watchdog = slint::Timer::default();
     if let Some(dir) = smoke_dir {

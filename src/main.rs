@@ -10,6 +10,7 @@ mod desktop;
 mod desktop_checks;
 mod engine;
 mod library;
+mod list_checks;
 mod local;
 mod local_checks;
 mod lyrics;
@@ -85,10 +86,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         )?;
         return Ok(());
     }
-    if args
-        .iter()
-        .any(|a| matches!(a.as_str(), "--demo" | "--smoke-test" | "--benchmark-filter"))
-    {
+    if args.iter().any(|a| {
+        matches!(
+            a.as_str(),
+            "--demo" | "--smoke-test" | "--benchmark-filter" | "--list-keyboard-smoke-test"
+        )
+    }) {
         demo::run()
     } else {
         local::run()
